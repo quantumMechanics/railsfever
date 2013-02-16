@@ -1,0 +1,51 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+body {
+	background: $black;
+}
+
+.center-text {
+   text-align: center;
+}
+
+h1 {
+
+	color: $white;
+	margin-top: 20%;
+	animation-duration: 10s;
+	animation-name: slide-down;
+}
+
+@keyframes slide-down {
+
+	from {
+		margin-top: -5%;
+	}
+
+	to {
+		margin-top: 20%;
+	}
+}
+
+@-webkit-keyframes slide-down {
+
+	from {
+		margin-top: -5%;
+	}
+
+	to {
+		margin-top: 20%;
+	}
+}
+
+@-moz-keyframes slide-down {
+
+	from {
+		margin-top: -5%;
+	}
+
+	to {
+		margin-top: 20%;
+	}
+}
