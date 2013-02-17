@@ -31,6 +31,15 @@ h1.second {
 	animation-name: slide-up;
 }
 
+h1.third {
+	float: right;
+	text-align: center;
+	margin-top: -25%;
+	margin-right: 5%;
+	animation-duration: 20s;
+	animation-name: slide-left;
+}
+
 @keyframes slide-down {
 
 	from {
@@ -57,4 +66,14 @@ h1.second {
 	60% { color: $black }
 }
 
+@keyframes slide-left {
+	from {
+		margin-right: -5%;
+		margin-top: -25% 
+	}
 
+	to {
+		margin-right: 5%;
+		margin-top: -25%
+	}
+}
