@@ -3,6 +3,7 @@
 
 $grayDarker: #333333;
 
+/* removes scroll bars */
 html {
   overflow-y: hidden;
   overflow-x: hidden; 
@@ -18,78 +19,98 @@ body {
 }
 
 h1.first {
-
 	color: $white;
 	margin-top: 15%;
-	animation-duration: 10s;
-	animation-name: slide-down;
 	
+	animation-duration: 10s;
+	-moz-animation-duration: 10s;
+	-webkit-animation-duration: 10s;
+	-o-animation-duration: 10s;
+
+	animation-name: slide-down;
+	-moz-animation-name: slide-down;
+	-webkit-animation-name: slide-down;
+	-o-animation-name: slide-down;
 }
 
 h1.second {
 	color: $white;
 	margin-top: 10%;
+	
 	animation-duration: 10s;
+	-moz-animation-duration: 10s;
+	-webkit-animation-duration: 10s;
+	-o-animation-duration: 10s;
+
 	animation-name: slide-up;
+	-moz-animation-name: slide-up;
+	-webkit-animation-name: slide-up;
+	-o-animation-name: slide-up;
 }
 
 h2 {
-//	color: $grayDarker;
-	//float: right;
-	text-align: center;
+	color: $grayDarker;
 	margin-top: 13%;
-	//margin-right: 5%;
-
-	border-top: 1px solid $grayDarker;
+	//border-top: 1px solid $grayDarker;
 	border-bottom: 1px solid $grayDarker;
 	
-
 	animation-duration: 10s;
-	animation-name: change-color;
+	-moz-animation-duration: 10s;
+	-webkit-animation-duration: 10s;
+	-o-animation-duration: 10s;
 
+	animation-name: contact-us;
+	-moz-animation-name: contact-us;
+	-webkit-animation-name: contact-us;
+	-o-animation-name: contact-us;
 }
 
-
-
+/** KEYFRAMES **/
 @keyframes slide-down {
-
-	from {
-		margin-top: -5%;
-	}
-
-	to {
-		margin-top: 15%;
-	}
-
+	from { margin-top: -5%; }
+	to { margin-top: 15%; }
 	50% { color: $black }
-	
+}
+@-moz-keyframes slide-down {
+	from { margin-top: -5%; }
+	to { margin-top: 15%; }
+	50% { color: $black }
+}
+@-webkit-keyframes slide-down {
+	from { margin-top: -5%; }
+	to { margin-top: 15%; }
+	50% { color: $black }
+}
+@-o-keyframes slide-down {
+	from { margin-top: -5%; }
+	to { margin-top: 15%; }
+	50% { color: $black }
 }
 
 @keyframes slide-up {
-	from {
-		margin-top: 70%;
-	}
-
-	to {
-		margin-top: 10%;
-	}
-
+	from { margin-top: 70%; }
+	to { margin-top: 10%; }
+	60% { color: $black }
+}
+@-moz-keyframes slide-up {
+	from { margin-top: 70%; }
+	to { margin-top: 10%; }
+	60% { color: $black }
+}
+@-webkit-keyframes slide-up {
+	from { margin-top: 70%; }
+	to { margin-top: 10%; }
+	60% { color: $black }
+}
+@-o-keyframes slide-up {
+	from { margin-top: 70%; }
+	to { margin-top: 10%; }
 	60% { color: $black }
 }
 
-@keyframes slide-left {
-	from {
-		margin-right: -5%;
-		margin-top: -25% 
-	}
 
-	to {
-		margin-right: 5%;
-		margin-top: -25%
-	}
-}
 
-@keyframes change-color {
+@keyframes contact-us {
 	from {
 		color: $black; /*text color*/
 		border-top-color: $black;
@@ -108,3 +129,61 @@ h2 {
 		border-bottom-color: $black; 
 	}
 }
+@-moz-keyframes contact-us {
+	from {
+		color: $black; /*text color*/
+		border-top-color: $black;
+		border-bottom-color: $black;
+	}
+
+	to {
+		color: $grayDarker;
+		border-top-color: $grayDarker;
+		border-bottom-color: $grayDarker;
+	}
+
+	100% { 
+		color: $black; 
+		border-top-color: $black;
+		border-bottom-color: $black; 
+	}
+}
+@-webkit-keyframes contact-us {
+	from {
+		color: $black; /*text color*/
+		border-top-color: $black;
+		border-bottom-color: $black;
+	}
+
+	to {
+		color: $grayDarker;
+		border-top-color: $grayDarker;
+		border-bottom-color: $grayDarker;
+	}
+
+	100% { 
+		color: $black; 
+		border-top-color: $black;
+		border-bottom-color: $black; 
+	}
+}
+@-o-keyframes contact-us {
+	from {
+		color: $black; /*text color*/
+		border-top-color: $black;
+		border-bottom-color: $black;
+	}
+
+	to {
+		color: $grayDarker;
+		border-top-color: $grayDarker;
+		border-bottom-color: $grayDarker;
+	}
+
+	100% { 
+		color: $black; 
+		border-top-color: $black;
+		border-bottom-color: $black; 
+	}
+}
+
