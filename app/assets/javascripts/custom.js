@@ -42,6 +42,8 @@ $(function() {
       height: "auto",
       width: "auto",
       modal: true,
+      draggable: false,
+      resizable: false,
       buttons: {
         "Send": function() {
           var bValid = true;
