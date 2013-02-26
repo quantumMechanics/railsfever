@@ -1,5 +1,8 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import url(http://fonts.googleapis.com/css?family=Nosifer|Sarina|Caesar+Dressing|);
+
+
 
 $grayDarker: #333333;
 $grayLessDarker: #3e3e3e;
@@ -82,6 +85,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 h1.first {
 	color: $white;
 	margin-top: 15%;
+	font-family: 'Nosifer', cursive;
 	
 	/*animation-duration: 10s;
 	-moz-animation-duration: 10s;
@@ -97,6 +101,7 @@ h1.first {
 h1.second {
 	color: $white;
 	margin-top: 10%;
+	font-family: 'Sarina', cursive;
 	
 	/*animation-duration: 10s;
 	-moz-animation-duration: 10s;
@@ -112,6 +117,8 @@ h1.second {
 .button{
 	color: #1b1b1b;
 	background-color: $ash;
+	font-family: 'Caesar Dressing', cursive;
+	text-transform: uppercase;
 
 	&:hover{
 		background-color: #555555;
