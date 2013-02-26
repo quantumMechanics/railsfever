@@ -4,6 +4,7 @@
 $grayDarker: #333333;
 $grayLessDarker: #3e3e3e;
 $slate: #d9d9d9;
+$ash: #5e5e5e;
 
 /*
 .inputbox, input.required, textarea.required  {
@@ -108,9 +109,20 @@ h1.second {
 	-o-animation-name: slide-up;*/
 }
 
-h2 {
-	color: $grayDarker;
+
+
+.landing {
+	
+	color: #1b1b1b;
+
 	margin-top: 13%;
+
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: $ash;
+
+
 	//border-top: 1px solid $grayDarker;
 	//border-bottom: 1px solid $grayDarker;
 	/*
@@ -123,6 +135,11 @@ h2 {
 	-moz-animation-name: contact-us;
 	-webkit-animation-name: contact-us;
 	-o-animation-name: contact-us;*/
+}
+
+h2:hover {
+	cursor: pointer;
+	cursor: hand;
 }
 
 /** KEYFRAMES **/
