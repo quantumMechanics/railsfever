@@ -37,7 +37,7 @@ $(function() {
       }
     }
  
-    $( "#dialog-form" ).dialog({
+    $( "#dialog-form-disconnected" ).dialog({
       autoOpen: false,
       height: "auto",
       width: "auto",
@@ -83,7 +83,7 @@ $(function() {
       }
     });
  
-    $( "#contact-us" )
+    $( "#contact-us-disconnected" )
       //.button()
       .click(function() {
         $( "#dialog-form" ).dialog( "open" );
