@@ -21,6 +21,7 @@ $ash: #5e5e5e;
 background:#383838;	border:solid 1px #545454;}
 */
 
+/**** GENERAL STYLES ******/
 /* removes scroll bars */
 html {
   overflow-y: auto;
@@ -32,55 +33,12 @@ body {
 	background-attachment: fixed;
 }
 
-
-
 .center-text {
    text-align: center;
 }
 
-#dialog-form {
-	width: 800px !important;
-	background-color: $grayLessDarker !important;
-	color: $slate;
-}
 
-input[type="text"], input[type="email" ], textarea {
-	width: 80% !important;
-
-	border:solid 1px #494949;
-	color: $slate;
-	background:#2f2f2f;
-	border-radius: 0;
-
-	-moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
-    box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
-
-    &:focus {
-
-		border-color: rgba(255, 255, 255, 0.8);
-		outline: 0;
-		outline: thin dotted \9;
-		/* IE6-9 */
-		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
-		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
-		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
-    }
-}
-
-/** PLACE HOLDERS **/
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-	color: $slate; 
-}
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: $slate; 
-}
-
-input:-moz-placeholder, textarea:-moz-placeholder {
-	color: $slate;
-}
-
+/***** HOME PAGE HEADERS *****/
 
 h1.first {
 	color: $white;
@@ -114,20 +72,7 @@ h1.second {
 	-o-animation-name: slide-up;*/
 }
 
-.button{
-	color: #1b1b1b;
-	background-color: $ash;
-	font-family: 'Caesar Dressing', cursive;
-	text-transform: uppercase;
-
-	&:hover{
-		background-color: #555555;
-		color: #222222;
-		cursor: pointer;
-		cursor: hand;
-	}
-}
-
+/*** HOME PAGE, BUTTON SIZE AND POSITION ***/ 
 
 .landing {
 		
@@ -147,6 +92,79 @@ h1.second {
 	-webkit-animation-name: contact-us;
 	-o-animation-name: contact-us;*/
 	
+}
+
+/** BUTTON LOOK & FEEL, ALL PAGES **/
+.button, a{
+	color: #1b1b1b;
+	background-color: $ash;
+	font-family: 'Caesar Dressing', cursive;
+	text-transform: uppercase;
+
+	&:hover{
+		background-color: #555555;
+		color: #222222;
+		cursor: pointer;
+		cursor: hand;
+		text-decoration: none;
+	}
+}
+
+/******** FORM ********/
+
+#dialog-form {
+	width: 800px !important;
+	background-color: $grayLessDarker !important;
+	color: $slate;
+}
+
+input[type="text"], input[type="email" ], input[type="tel"], textarea {
+	width: 100% !important;
+
+	border:solid 1px #494949;
+	color: $slate;
+	background:#2f2f2f;
+	border-radius: 0;
+
+	-moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
+
+    &:focus {
+
+		border-color: rgba(255, 255, 255, 0.8);
+		outline: 0;
+		outline: thin dotted \9;
+		/* IE6-9 */
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/** FORM PLACE HOLDERS **/
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color: $slate; 
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: $slate; 
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color: $slate;
+}
+
+/***** FORM POSITION *****/
+
+form {
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+
+	height: 60%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 
