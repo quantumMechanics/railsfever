@@ -4,6 +4,10 @@ describe "StaticPages" do
 
 	subject { page }
 
+	shared_examples_for "contact us page" do 
+		it { should have_selector('form')}
+	end
+
 	describe "Home page" do
 		before { visit root_path }
 		it { should have_selector("h1", class: 'first') }
@@ -22,8 +26,5 @@ describe "StaticPages" do
 		it_should_behave_like "contact us page"
 	end
 
-	shared_examples_for "contact us page" do 
-		it { should have_selector('form')}
-	end
 
 end
