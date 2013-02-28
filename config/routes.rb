@@ -1,5 +1,6 @@
 Quantum::Application.routes.draw do
   root to: 'static_pages#home'
+  match '/contact', to: 'static_pages#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
