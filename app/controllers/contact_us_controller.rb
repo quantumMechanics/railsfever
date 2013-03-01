@@ -11,7 +11,7 @@ class ContactUsController < ApplicationController
 			ContactUsMailer.new_message(@message).deliver
 			redirect_to(root_path, notice: "Message was successfully sent")
 		else
-			flash.now[:error] = "Please fill in all fields."
+			flash.now[:error] = "Please fill in all fields"
 			render :new
 		end
 	end
