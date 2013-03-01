@@ -34,4 +34,21 @@ Quantum::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+  config.action_mailer.smtp_settings = {
+    :address              => "127.0.0.1",
+    :port                 => 1025,
+    :domain               => "railsfever.dev",
+    :user_name            => "test@customer.dev",
+    :password             => "Super-Secure-Password",
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
+
+  config.action_mailer.default_url_options = {
+    :host => "railsfever.dev"
+  }
+  
+
 end
