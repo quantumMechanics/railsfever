@@ -9,6 +9,8 @@ $grayLessDarker: #3e3e3e;
 $slate: #d9d9d9;
 $ash: #5e5e5e;
 
+
+
 /*
 .inputbox, input.required, textarea.required  {
 	border:solid 1px #494949;
@@ -128,15 +130,16 @@ form button {
 input[type="text"], input[type="email" ], input[type="tel"], textarea {
 	width: 98.5% !important;
 	font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
-	border:solid 1px #494949;
+	border: solid 1px #494949;
 	color: $slate;
 	background:#2f2f2f;
 	border-radius: 0;
-
+	
 	-moz-box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
     box-shadow:0 1px 1px rgba(0, 0, 0, 0.2) inset;
 
+ 
     &:focus {
 		border-color: rgba(255, 255, 255, 0.8);
 		outline: 0;
@@ -148,9 +151,10 @@ input[type="text"], input[type="email" ], input[type="tel"], textarea {
     }
 }
 
-input[type="text"], input[type="email" ], input[type="tel"] {
+input[type="text"], input[type="email" ], input[type="tel"] {	
 	height: 23px;
 }
+
 
 /** FORM PLACE HOLDERS **/
 
@@ -176,6 +180,13 @@ form {
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
+
+/**** FORM ERRORS ****/
+.field_with_errors {
+   @extend .control-group;
+   @extend .error
+}
+
 
 
 /** KEYFRAMES **/
