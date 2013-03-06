@@ -4,20 +4,28 @@ class Message
 	include ActiveModel::Conversion
 	extend ActiveModel::Naming
 
-	attr_accessor :first_name, :last_name, :tel, :email, :subject, :body
+
+attr_accessor :first_name, :last_name, :tel, :email, :subject, :body
 
 	validates :first_name, :last_name, :tel, :email, :body, presence: true
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  	validates :email , presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates :first_name, length: { maximum: 30 }
+  validates :last_name, length: { maximum: 30 }
+  validates :tel, length: { maximum: 20 }
+  validates :subject, length: { maximum: 50 }
+  validates :body, length: { maximum: 990 }
+	 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format: { with: VALID_EMAIL_REGEX }
 
-  	def initialize( attributes = {} )
-  		attributes.each do |name, value|
-  			send("#{name}=", value)
-  		end
-  	end
 
-  	def persisted?
-  		false
-  	end
+	def initialize( attributes = {} )
+		attributes.each do |name, value|
+			send("#{name}=", value)
+		end
+	end
+
+	def persisted?
+		false
+	end
 
 end

@@ -1,8 +1,6 @@
 on homepage, move contact us higher
 fix entire app for mobile
 rename contact_us / path
-add validations for form fields
-add tests for forms
 style flash error messages
 application title
 find out what notice in contact_us controller is
