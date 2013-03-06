@@ -1,6 +1,8 @@
+ADD SITE TITLE
 on homepage, move contact us higher
 fix entire app for mobile
 rename contact_us / path
 style flash error messages
 application title
 find out what notice in contact_us controller is
+fix form text color, and placeholder color in all browsers
