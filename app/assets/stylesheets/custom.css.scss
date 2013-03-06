@@ -109,6 +109,7 @@ form button {
 	background-color: $ash;
 	font-family: 'Caesar Dressing', cursive;
 	text-transform: uppercase;
+	
 
 	&:hover{
 		background-color: #555555;
@@ -117,6 +118,10 @@ form button {
 		cursor: hand;
 		text-decoration: none;
 	}
+}
+
+.button h2 {
+	font-weight: normal;
 }
 
 /******** FORM ********/
