@@ -1,5 +1,4 @@
 ADD SITE TITLE - p1
-on homepage, move contact us higher - p3
 fix entire app for mobile - p3
 style flash error messages - p2
 find out what notice in contact_us controller is - p5

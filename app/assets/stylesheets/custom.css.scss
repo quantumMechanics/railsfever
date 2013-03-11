@@ -1,6 +1,6 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
-@import url(http://fonts.googleapis.com/css?family=Nosifer|Sarina|Caesar+Dressing|);
+@import url(http://fonts.googleapis.com/css?family=Nosifer|Merriweather+Sans|Caesar+Dressing|);
 
 
 
@@ -46,7 +46,7 @@ body {
 
 h1.first {
 	color: $white;
-	margin-top: 15%;
+	margin-top: 10%;
 	font-family: 'Nosifer', cursive;
 	font-weight: normal;
 	letter-spacing: 4px;
@@ -65,8 +65,11 @@ h1.first {
 h1.second {
 	color: $white;
 	margin-top: 10%;
-	font-family: 'Sarina', cursive;
+	font-family: 'Merriweather Sans', sans-serif;
 	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.5;
+	word-spacing: 3px;
 
 	/*animation-duration: 10s;
 	-moz-animation-duration: 10s;
@@ -83,7 +86,7 @@ h1.second {
 
 .landing {
 		
-	margin-top: 13%;
+	margin-top: 10%;
 	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
@@ -211,7 +214,7 @@ header p {
 	-moz-transition: all 0.6s linear;
 	-webkit-transition: all 0.6s linear;
 	-o-transition: all 0.6s linear;
-	
+		
 	&:hover {
 		cursor: pointer;
 		cursor: hand;
