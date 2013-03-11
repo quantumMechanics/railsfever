@@ -1,6 +1,5 @@
-ADD SITE TITLE - p1
-fix entire app for mobile - p3
 style flash error messages - p2
+Decide on transitions for homepage - p2
+fix entire app for mobile - p3
 find out what notice in contact_us controller is - p5
 fix form text color, and placeholder color in all browsers - p6
-Decide on transitions for homepage - p2
