@@ -48,7 +48,7 @@ body {
 
 h1.first {
 	color: $white;
-	margin-top: 10%;
+	margin-top: 100px;
 	font-family: 'Nosifer', 'Comic Sans MS', cursive;
 	font-weight: normal;
 	letter-spacing: 4px;
@@ -66,12 +66,13 @@ h1.first {
 
 h1.second {
 	color: $white;
-	margin-top: 7%;
+	margin-top: 70px;
 	font-family: 'Merriweather Sans', 'Arial Black', Impact, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	line-height: 1.5;
 	word-spacing: 3px;
+
 
 	/*animation-duration: 10s;
 	-moz-animation-duration: 10s;
@@ -88,11 +89,12 @@ h1.second {
 
 .landing {
 		
-	margin-top: 7%;
+	margin-top: 70px;
 	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
-	
+
+
 	/*
 	animation-duration: 10s;
 	-moz-animation-duration: 10s;
@@ -119,7 +121,7 @@ form button {
 	background-color: $ash;
 	font-family: 'Caesar Dressing', cursive;
 	text-transform: uppercase;
-	
+
 
 	&:hover{
 		background-color: #555555;
@@ -242,6 +244,35 @@ form {
 	//color: $black;
 	//background-color: $red;
 }
+
+/** RESPONSIVE WEB **/
+
+@media screen and (max-width: 1024px) {
+	h1.first { margin-top: 15%; }
+	h1.second { margin-top: 10%; }
+	.landing { margin-top: 10% }
+}
+
+@media screen and (max-width: 768px) {
+	h1.first { margin-top: 25%; }
+	h1.second { margin-top: 22%; word-spacing: 2px; font-size: 32px; }
+	.landing { margin-top: 22% }
+}
+
+@media screen and (max-width: 480px) {
+	h1.first { margin-top: 10%; }
+	h1.second { margin-top: 8.5%; font-size: 28px; }
+	.landing { margin-top: 7%; margin-bottom: 5%; }
+	.button h2 { font-size: 26px; }
+}
+
+@media screen and (max-width: 320px) {
+	//h1.first { margin-top: 10%; }
+	h1.second { font-size: 24px; margin-top: 12%; }
+	.landing { width: 80%; margin-top: 14%;  }
+	.button h2 { font-size: 26px; }
+}
+
 
 /** KEYFRAMES **/
 @keyframes slide-down {
