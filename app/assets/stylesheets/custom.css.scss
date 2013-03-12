@@ -47,7 +47,7 @@ body {
 h1.first {
 	color: $white;
 	margin-top: 10%;
-	font-family: 'Nosifer', cursive;
+	font-family: 'Nosifer', 'Comic Sans MS', cursive;
 	font-weight: normal;
 	letter-spacing: 4px;
 
@@ -64,8 +64,8 @@ h1.first {
 
 h1.second {
 	color: $white;
-	margin-top: 10%;
-	font-family: 'Merriweather Sans', sans-serif;
+	margin-top: 7%;
+	font-family: 'Merriweather Sans', 'Arial Black', Impact, sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	line-height: 1.5;
@@ -184,26 +184,25 @@ form {
 	margin-left: auto;
 
 	height: 60%;
-	margin-top: 5%;
+	margin-top: 7%;
 	margin-bottom: 5%;
 }
 
 /**** FORM ERRORS ****/
 .field_with_errors {
    @extend .control-group;
-   @extend .error
+   @extend .error;
+   margin-bottom: 0; /*removes bottom margin added by bootstrap on error*/
 }
 
 
-
+/** SIDE LOGO **/
 
 .logo-top-down {
 	position: absolute;
 	left: 6.5%;
 	top: 18%;
-}
 
-header p {
 	font-family: 'Nosifer', cursive;
 	font-weight: normal;
 	letter-spacing: 4px;
@@ -223,6 +222,20 @@ header p {
 	}
 }
 
+.alert {
+	//width: 68%;
+	//margin-right: auto;
+	//margin-left: auto;
+	
+	position: absolute;
+	top: 4%;
+	left: 15%;
+
+	padding: 3px 10px 3px 10px; 
+	border-radius: 0;
+	//color: $black;
+	//background-color: $red;
+}
 
 /** KEYFRAMES **/
 @keyframes slide-down {
