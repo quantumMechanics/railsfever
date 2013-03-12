@@ -7,7 +7,7 @@ class Message
 
 attr_accessor :first_name, :last_name, :tel, :email, :subject, :body
 
-	validates :first_name, :last_name, :tel, :email, :body, presence: true
+	validates :first_name, :last_name, :tel, :email, :subject, :body, presence: true
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
   validates :tel, length: { maximum: 20 }

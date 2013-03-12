@@ -16,7 +16,7 @@ describe ContactUsMailer do
 
   describe "when all fields are empty" do
   	before { @message.first_name=" ", @message.last_name=" ", @message.tel=" ",
-  			@message.email=" ", @message.subject=" " }
+  			@message.email=" ", @message.subject=" ",  @message.body=" " }
   	it { should_not be_valid }
   end
  
