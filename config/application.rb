@@ -67,17 +67,17 @@ module Quantum
 
     #mail configuration for contact form
     config.action_mailer.smtp_settings = {
-      :address              => ENV[MAIL_SERVER],
-      :port                 => ENV[MAIL_PORT],
-      :domain               => ENV[DOMAIN],
-      :user_name            => ENV[MAIL_USERNAME],
-      :password             => ENV[MAIL_PASSWORD],
+      :address              => ENV['MAIL_SERVER'],
+      :port                 => ENV['MAIL_PORT'],
+      :domain               => ENV['DOMAIN'],
+      :user_name            => ENV['MAIL_USERNAME'],
+      :password             => ENV['MAIL_PASSWORD'],
       :authentication       => :cram_md5,
       :enable_starttls_auto => true
     }
 
     config.action_mailer.default_url_options = {
-      :host => ENV[DOMAIN]
+      :host => ENV['DOMAIN']
     }
 
   end
