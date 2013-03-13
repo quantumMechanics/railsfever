@@ -5,3 +5,4 @@ fix form text color, and placeholder color in all browsers - p6
 display error when max characters are exceeded - p4 
 configure mailer for railsfever - p1
 fix scrollbar being always on on contact page - p6
+on error, form text color for text area becomes red - p6
