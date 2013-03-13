@@ -72,7 +72,7 @@ module Quantum
       :domain               => ENV['DOMAIN'],
       :user_name            => ENV['MAIL_USERNAME'],
       :password             => ENV['MAIL_PASSWORD'],
-      :authentication       => :cram_md5,
+      :authentication       => :simple,
       :enable_starttls_auto => true
     }
 
