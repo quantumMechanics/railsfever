@@ -231,18 +231,11 @@ form {
 }
 
 .alert {
-	//width: 68%;
-	//margin-right: auto;
-	//margin-left: auto;
-	
 	position: absolute;
 	top: 4%;
 	left: 15%;
-
 	padding: 3px 10px 3px 10px; 
-	border-radius: 0;
-	//color: $black;
-	//background-color: $red;
+	border-radius: 0;	
 }
 
 /** RESPONSIVE WEB **/
@@ -251,12 +244,23 @@ form {
 	h1.first { margin-top: 15%; }
 	h1.second { margin-top: 10%; }
 	.landing { margin-top: 10% }
+
+	form { margin-top: 12%; margin-bottom: 0;}
+	.logo-top-down { top: 25%;}
+	.alert {top: 8%;}
 }
 
 @media screen and (max-width: 768px) {
 	h1.first { margin-top: 25%; }
 	h1.second { margin-top: 22%; word-spacing: 2px; font-size: 32px; }
 	.landing { margin-top: 22% }
+
+	form { margin-top: 18%;}
+	.logo-top-down { top: 20%;}
+	input[type="text"], input[type="email" ], input[type="tel"] {	
+	   height: 28px;
+	}
+	.alert {top: 6%;}
 }
 
 @media screen and (max-width: 480px) {
@@ -264,6 +268,14 @@ form {
 	h1.second { margin-top: 8.5%; font-size: 28px; }
 	.landing { margin-top: 7%; margin-bottom: 5%; }
 	.button h2 { font-size: 26px; }
+
+	form { margin-top: 10%; margin-bottom: 5%; }
+	input[type="text"], input[type="email" ], input[type="tel"] {	
+	   height: 18px;
+	}
+	.alert {top: 2%; left: 18%;}
+	.logo-top-down { top: 28%; }
+	form button { font-size: 18px; }
 }
 
 @media screen and (max-width: 320px) {
@@ -271,6 +283,11 @@ form {
 	h1.second { font-size: 24px; margin-top: 12%; }
 	.landing { width: 80%; margin-top: 14%;  }
 	.button h2 { font-size: 24px; }
+
+	form { margin-top: 15%; }
+	.alert { font-size: 14px; padding: 1px 7px 1px 7px; top: 1%; left: 20%; }
+
+	.logo-top-down { top: 18%; }
 }
 
 
