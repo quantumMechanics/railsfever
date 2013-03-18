@@ -2,4 +2,3 @@ Decide on transitions for homepage - p2
 find out what notice in contact_us controller is - p5
 fix form text color, and placeholder color in all browsers - p6
 display error when max characters are exceeded - p4 
-on error, form text color for text area becomes red - p6
