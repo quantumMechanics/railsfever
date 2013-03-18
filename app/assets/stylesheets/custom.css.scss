@@ -203,6 +203,9 @@ form {
 	border-color: $formBorderErrorRed;
 }
 
+.field_with_errors textarea {
+	color: $slate; /* Overide bootstrap setting the color for textarea error to red. */
+}
 
 /** SIDE LOGO **/
 
