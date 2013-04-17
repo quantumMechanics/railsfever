@@ -21,7 +21,7 @@ describe Comment do
   	it { should_not be_valid }
   end
 
-  describe "with blank comment" do
+  describe "with blank content" do
   	before { @comment.content = " "}
   	it { should_not be_valid }
   end
