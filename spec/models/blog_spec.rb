@@ -1,5 +1,41 @@
 require 'spec_helper'
 
 describe Blog do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  before do
+  	@blog = Blog.new(content: "my blog")
+  end
+
+  subject { @blog }
+
+  
+  	describe "with blank content" do
+  		before { @blog.content = " " }
+  		it { should_not be_valid }
+  	end
+
+	describe "comment associations" do
+		before { @blog.save }
+		  
+		let!(:older_comment) do
+		  FactoryGirl.create(:comment, blog: @blog, created_at: 1.day.ago)
+		end
+
+		let!(:newer_comment) do
+		  FactoryGirl.create(:comment, blog: @blog, created_at: 1.hour.ago)
+		end
+
+		it "should have the right comments in the right order" do
+		  @blog.comments.should == [newer_comment, older_comment]
+		end
+
+		it "should delete associated comments" do
+		  comments = @blog.comments.dup
+		  @blog.destroy
+		  comments.should_not be_empty #this is validating that we are duplicating the array during creation and not copying the reference
+		  comments.each do |comment|
+		  	Comment.find_by_id(comment.id).should be_nil
+		  end
+		end
+	end
 end
