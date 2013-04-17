@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs =  Blog.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +13,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+  
     @blog = Blog.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @blog }

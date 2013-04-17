@@ -10,14 +10,17 @@
 
 <% @blogs.each do |blog| %>
   <tr>
-    <td><%= blog.content %></td>
+    <td>TITLE: <%=blog.title %></td>
+    <td>CONTENT: <%= blog.content %></td>
     <td><%= link_to 'Show', blog %></td>
     <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
     <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+
 </table>
 
 <br />
 
 <%= link_to 'New Blog', new_blog_path %>
+<%= will_paginate @blogs %>
