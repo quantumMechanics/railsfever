@@ -2,6 +2,7 @@ Quantum::Application.routes.draw do
  
   resources :comments
   resources :blogs
+  resources :users
   
 
   root to: 'static_pages#home'
