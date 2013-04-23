@@ -1,30 +1,48 @@
-<h1>Listing blogs</h1>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container"> 
+      <nav> 
+        <ul class="nav pull-right">
+          <li> <%= link_to 'Sign In', signin_path %> </li>
+          <% if signed_in? %>
+            <li> <%= link_to 'Sign Out', signout_path, method: 'delete' %> </li> 
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div> 
+</header>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="container">
+  <table>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @blogs.each do |blog| %>
-  <tr>
-    <td>TITLE: <%=link_to blog.title, blog %></td>
-    <td>CONTENT: <%= blog.content %></td>
-    <td>COMMENTS: <% blog.comments.each do |c| %> 
-      <%= c.content %> |
-    <% end %>
-    </td>
-    <td><%= link_to 'Show', blog %></td>
-    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td>TITLE: <%=link_to blog.title, blog %></td>
+      <td>CONTENT: <%= blog.content %></td>
+      <td>COMMENTS: <% blog.comments.each do |c| %> 
+        <%= c.content %> |
+      <% end %>
+      </td>
+      <td><%= link_to 'Show', blog %></td>
+      <% if signed_in? %>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
 
-</table>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Blog', new_blog_path %>
-<%= will_paginate @blogs %>
+  <%= link_to 'New Blog', new_blog_path %>
+  <%= will_paginate @blogs %>
+
+</div>
