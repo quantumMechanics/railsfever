@@ -26,9 +26,15 @@ namespace :db do
   
     40.times do
       title = Faker::Lorem.sentence(8)
-      content = Faker::Lorem.paragraph(10)
+      content = Faker::Lorem.paragraph(60)
       b=Blog.new(title: title, content: content)
       b.save
     end
+
+    blogs = Blog.all(limit: 20)
+    2.times do
+      content = Faker::Lorem.sentence(5)
+      blogs.each { |b| b.comments.create!(content: content) }
+    end   
   end
 end

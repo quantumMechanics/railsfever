@@ -18,31 +18,34 @@
 </header>
 
 <div class="container">
-  <table>
-    <tr>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+ 
+    
 
   <% @blogs.each do |blog| %>
-    <tr>
-      <td>TITLE: <%=link_to blog.title, blog %></td>
-      <td>CONTENT: <%= blog.content %></td>
-      <td>COMMENTS: <% blog.comments.each do |c| %> 
-        <%= c.content %> |
-      <% end %>
-      </td>
-      <td><%= link_to 'Show', blog %></td>
+    
+      <h1> <%=link_to blog.title, blog %> </h1>
+      <p> <%= blog.content %></p>
+      <h5> comments </h3>
+       <ol>
+        
+        <% blog.comments.each do |c| %> 
+          <li>
+            <%= c.content %> 
+          </li>
+        <% end %>
+       </ol>
+
+      <ul>
       <% if signed_in? %>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <li> <%= link_to 'Edit', edit_blog_path(blog) %> </li>
+        <li> <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
       <% end %>
-    </tr>
+      </ul>
+
   <% end %>
 
-  </table>
+  
 
   <br />
 
