@@ -4,19 +4,42 @@
   <h1> <%= @blog.title %> </h1>
   <%= @blog.content %>
 </p>
-<%= link_to 'add comment', new_comment_path %>
+ 
 
- <ol>        
+<% if signed_in? %>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<% end %>
+<%= link_to 'Back', blogs_path %>
+
+
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<ol>        
 	<% @blog.comments.each do |c| %> 
 	<li>
 	<%= c.content %> 
 	</li>
 	<% end %>
 </ol>
-
-<% if signed_in? %>
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<% end %>
-<%= link_to 'Back', blogs_path %>
 
 <%= debug(params) if Rails.env.development? %>

@@ -12,29 +12,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
-    @comment = Comment.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @comment }
-    end
-  end
-
-  # GET /comments/new
-  # GET /comments/new.json
-  def new()
-   
-    @comment = Comment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @comment }
-    end
-  end
-
+  
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
@@ -46,13 +24,15 @@ class CommentsController < ApplicationController
     #@comment = Comment.new(params[:comment])
     blog_id = cookies[:blog_id]
     @blog = Blog.find(blog_id)
-    @comment = @blog.comments
+    @comment = @blog.comments.build(content: params[:comment][:content])
 
-    if @comment.create!(content: params[:comment][:content])
+    if @comment.save
       redirect_to blog_path(blog_id)
     else
-      #handle failure
+      flash[:error] = 'Comment was not saved'
+      redirect_to blog_path(blog_id)
     end
+    
 
   end
 

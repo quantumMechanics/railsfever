@@ -1,6 +1,6 @@
 Quantum::Application.routes.draw do
  
-  resources :comments
+  resources :comments, only: [:index, :create, :edit, :update, :destroy]
   resources :blogs
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

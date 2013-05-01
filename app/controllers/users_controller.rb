@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :require_signed_in_user, only: [:edit, :update, :index, :destroy]
-	before_filter :requre_correct_user, only: [:edit, :update]
+	before_filter :require_correct_user, only: [:edit, :update]
 	before_filter :require_admin_user, only: [:destroy]
 	
 	def show
