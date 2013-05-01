@@ -25,15 +25,6 @@
     
       <h1> <%=link_to blog.title, blog %> </h1>
       <p> <%= blog.content %></p>
-      <h5> comments </h3>
-       <ol>
-        
-        <% blog.comments.each do |c| %> 
-          <li>
-            <%= c.content %> 
-          </li>
-        <% end %>
-       </ol>
 
       <ul>
       <% if signed_in? %>
@@ -51,5 +42,7 @@
 
   <%= link_to 'New Blog', new_blog_path %>
   <%= will_paginate @blogs %>
+
+  <%= debug(params) if Rails.env.development? %>
 
 </div>

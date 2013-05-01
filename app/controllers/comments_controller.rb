@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  
+
   # GET /comments
   # GET /comments.json
   def index
@@ -23,7 +25,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   # GET /comments/new.json
-  def new
+  def new()
+   
     @comment = Comment.new
 
     respond_to do |format|
@@ -40,17 +43,17 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    #@comment = Comment.new(params[:comment])
+    blog_id = cookies[:blog_id]
+    @blog = Blog.find(blog_id)
+    @comment = @blog.comments
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.create!(content: params[:comment][:content])
+      redirect_to blog_path(blog_id)
+    else
+      #handle failure
     end
+
   end
 
   # PUT /comments/1
