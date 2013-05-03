@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  
+  before_filter :require_signed_in_user, only: [ :index, :edit, :update, :destroy]
+  before_filter :require_admin_user, only: [:index, :edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -43,7 +44,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment.blog}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

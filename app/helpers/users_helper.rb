@@ -6,9 +6,11 @@ module UsersHelper
 
 	def require_admin_user
 		unless current_user().admin?
-			flash[:error] = "Only admins can delete users"
-			redirect_to users_url
+			flash[:error] = "Only admins can modify users or comments"
+			redirect_to blogs_url
 		end
 	end
+
+	
 
 end
