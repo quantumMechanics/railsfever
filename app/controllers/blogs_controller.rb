@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+  before_filter :require_signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :require_admin_user, only: [:edit, :update, :destroy]
+
   # GET /blogs
   # GET /blogs.json
   def index

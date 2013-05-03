@@ -47,20 +47,9 @@ class UsersController < ApplicationController
 
 	private
 		
-		def require_signed_in_user
-			redirect_to signin_url, notice: 'Please Sign In.' unless signed_in?
-		end
-
 		def require_correct_user
 			@user = User.find(params[:id])
 			redirect_to(root_path) unless current_user?(@user)
-		end
-
-		def require_admin_user
-			unless current_user().admin?
-				flash[:error] = "Only admins can delete users"
-				redirect_to users_url
-			end
 		end
 
 end
