@@ -35,6 +35,14 @@ namespace :db do
     2.times do
       content = Faker::Lorem.sentence(5)
       blogs.each { |b| b.comments.create!(content: content) }
-    end   
+    end 
+
+    #create a lot of comments for one blog to get pagination
+     blog40 = Blog.find_by_id(40)
+     50.times do
+        content = Faker::Lorem.sentence(8)
+        blog40.comments.create!(content: content)
+     end
+
   end
 end

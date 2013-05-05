@@ -7,18 +7,18 @@
  
 
 <% if signed_in? %>
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
+	<%= link_to 'Edit', edit_blog_path(@blog) %> |
 <% end %>
 <%= link_to 'Back', blogs_path %>
 
 <%= render 'shared/comment_form' %>
 
-<ol>        
-	<% @blog.comments.each do |c| %> 
-	<li>
-	<%= c.content %> 
-	</li>
-	<% end %>
-</ol>
+<% if @blog.comments.any? %>
+	<h3> Comments (<%= @blog.comments.count %>)</h3>
+	<ol>        
+		<%= render @comments %> 
+		<%= will_paginate @comments %>
+	</ol>
+<% end %>
 
 <%= debug(params) if Rails.env.development? %>

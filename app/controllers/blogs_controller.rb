@@ -20,6 +20,7 @@ class BlogsController < ApplicationController
     cookies[:blog_id] = {value: params[:id]}
     
     @comment = Comment.new
+    @comments = @blog.comments.paginate(page: params[:page])
     
     respond_to do |format|
       format.html # show.html.erb
