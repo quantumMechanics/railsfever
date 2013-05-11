@@ -14,7 +14,7 @@
 <%= render 'shared/comment_form' %>
 
 <% if @blog.comments.any? %>
-	<h3> Comments (<%= @blog.comments.count %>)</h3>
+	<h3> <%= pluralize(@blog.comments.count,"comment") %></h3>
 	<ol>        
 		<%= render @comments %> 
 		<%= will_paginate @comments %>
