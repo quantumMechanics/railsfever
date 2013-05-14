@@ -20,7 +20,7 @@
 .content-slider-wrapper {
     position: relative;
     clear: both;
-    background: url(images/70p.png) fixed;
+    background: url(70p.png) fixed;
     margin: 30px 0 3% 0;
     padding: 2% 60px 0 60px;
 }
@@ -91,7 +91,7 @@
     top: 40%;
     width: 40px;
     height: 80px;
-    background:url(images/sliderarrows.png) 0 50% no-repeat;
+    background:url(sliderarrows.png) 0 50% no-repeat;
 }
 .content-slider.flexslider .flex-direction-nav a.flex-prev {
     left: 8px;
@@ -156,7 +156,7 @@
 }
 .content-slider-wrapper.light .flex-direction-nav a.flex-next,
 .content-slider-wrapper.light .flex-direction-nav a.flex-prev {
-    background:url(images/sliderarrows.png) -140px 50% no-repeat;
+    background:url(sliderarrows.png) -140px 50% no-repeat;
 }
 .content-slider-wrapper.light .flex-direction-nav a.flex-prev {
     background-position: -180px 50%;
@@ -248,7 +248,7 @@
 	/*light style arrows */
 	.content-slider-wrapper.light .flex-direction-nav a.flex-next,
 	.content-slider-wrapper.light .flex-direction-nav a.flex-prev {
-    background:url(images/sliderarrows.png) -220px 50% no-repeat;
+    background:url(sliderarrows.png) -220px 50% no-repeat;
 	}
 	.content-slider-wrapper.light .flex-direction-nav a.flex-prev {
     background-position: -250px 50%;
@@ -272,7 +272,7 @@
 
 .content-slider.flexslider .flex-direction-nav a.flex-next,
 .content-slider.flexslider .flex-direction-nav a.flex-prev {
-    background-image:url(images/retina/sliderarrows_@2x.png);
+    background-image:url(retina/sliderarrows_@2x.png);
 			-moz-background-size:360px 100px; 
              -ie-background-size:360px 100px;
               -o-background-size:360px 100px;

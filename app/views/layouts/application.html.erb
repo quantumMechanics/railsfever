@@ -28,8 +28,9 @@
   </script>
 
 </head>
-<body>
+<body class="index">
 
+  <%= render 'layouts/header' %>
   <!-- RENDER FLASH MESSAGES -->
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"> <%= value %> </div>
@@ -37,10 +38,13 @@
 
   <%= yield %>
 
+  <%= render 'layouts/footer' %>
+
+  <%= javascript_include_tag "application" %>
 </body>
 
-<%= render 'layouts/footer' %>
 
-<%= javascript_include_tag "application" %>
+
+
 
 </html>

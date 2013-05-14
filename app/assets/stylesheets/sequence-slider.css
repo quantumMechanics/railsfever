@@ -16,7 +16,7 @@ Custom Theme for Crisp Bootstrap Template by Christina Arasmo Beymer
 		position: relative;
 		margin: 0 auto;
 		overflow: hidden;
-		background:url(images/5p.png);
+		background:url(5p.png);
 		-webkit-text-stroke: 0.35px
 }
 #sequence {margin:0 auto;position:relative;max-width:1200px;}
@@ -66,7 +66,7 @@ Custom Theme for Crisp Bootstrap Template by Christina Arasmo Beymer
 		top: 40%;
 		width: 40px;
 		height: 80px;
-    	background:url(images/sliderarrows.png) -140px 50% no-repeat;
+    	background:url(sliderarrows.png) -140px 50% no-repeat;
 }
 #sequence-slider-wrapper .prev {
 		left: 10px;

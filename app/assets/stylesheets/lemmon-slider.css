@@ -103,7 +103,7 @@
     text-indent: -9999px;
     display: block;
     opacity: .8;
-    background: #976533 url(images/sliderarrows.png) -80px 50% no-repeat;
+    background: #976533 url(sliderarrows.png) -80px 50% no-repeat;
 }
 .next-page { border-left: 3px solid #fff }
 .prev-page {
@@ -211,7 +211,7 @@
 
 .prev-page,
 .next-page {
-    background-image:url(images/retina/sliderarrows_@2x.png);
+    background-image:url(retina/sliderarrows_@2x.png);
 			-moz-background-size:360px 100px; 
              -ie-background-size:360px 100px;
               -o-background-size:360px 100px;

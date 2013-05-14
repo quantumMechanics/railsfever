@@ -24,7 +24,7 @@
 
 .features li:nth-child(even), 
 .features li.even, .lt-ie9 .features li.even {
-	background-image: url(images/7p.png);
+	background-image: url(7p.png);
 }
 .features li:nth-child(odd), 
 .features li.odd, .lt-ie9 .features li.odd {
@@ -36,7 +36,7 @@
 }
 .features:hover li {
     color:#fcf8e5;
-	background-image: url(images/50p.png);
+	background-image: url(50p.png);
 }
 .features li.detailsPop{
 	line-height:60px!important;
