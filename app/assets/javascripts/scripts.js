@@ -1,25 +1,4 @@
 
-// You can take this refresh out as most people don't resize their page, this is for the demo
-/*================================================================*/
-/*	REFRESH IF WINDOW IS UNDER OR OVER 747 PX WIDE (removed 20px for scroll bar, that's why)
-/*================================================================*/
-var ww = $(window).width();
-var limit = 747; 
-
-function refresh() {
-   ww = $(window).width();
-   var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
-}
-
-var tOut;
-$(window).resize(function() {
-    var resW = $(window).width();
-    clearTimeout(tOut);
-    if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {        
-        tOut = setTimeout(refresh, 100);
-    }
-}); 
-
 /*================================================================*/
 /*	TRIGGER EQUAL COLUMNS AT 767 px 
 /*================================================================*/
