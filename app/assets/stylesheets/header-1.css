@@ -21,7 +21,7 @@ body.tall-logo nav.user {margin-left:180px;}
     background:url(logo.png) no-repeat;
 }
 /* ie 7 fix*/
-.lt-ie8 #logo {position:absolute!important:top:0;left:0;}
+.lt-ie8 #logo {position:absolute !important;top:0;left:0;}
 
 
 #logo em { 
