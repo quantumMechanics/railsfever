@@ -142,7 +142,7 @@
     }
 	.boxed-slider.flexslider .img img {
 		width:auto;
-		max-width 100%;
+		max-width: 100%;
 		margin:0 auto;
 	}
     .boxed-slider.flexslider .caption h2 {
