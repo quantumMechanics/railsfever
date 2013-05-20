@@ -67,4 +67,7 @@ Quantum::Application.configure do
 
   # tell app server to server our pre-compiled assets 	
   config.serve_static_assets = true
+
+  #include plain cs and js files
+  config.assets.precompile += %w( *.js *.css )
 end
