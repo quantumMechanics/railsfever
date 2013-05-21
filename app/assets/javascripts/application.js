@@ -11,5 +11,13 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 // require jquery_ujs
+
 //= require jquery
+//= require fancybox_init
+//= require fancybox/source/jquery.fancybox
+//= require fancybox/source/jquery.fancybox.pack
+//= require fancybox/source/helpers/jquery.fancybox-thumbs
+//= require fancybox/source/helpers/jquery.fancybox-media
+//= require fancybox/source/helpers/jquery.fancybox-buttons
+//= require_self
 //= require_tree .
