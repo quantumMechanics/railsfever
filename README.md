@@ -1,5 +1,7 @@
 # RAILS FEVER
 
-This repo contains source for http://www.railsfever.com
+See the development version of the site at http://netcool.herokuapp.com
 
-See the development version (staging env) of the site at http://netcool.herokuapp.com
+The backend is complete, but a UI redesign work is in progres. Please pardon our appearance. Some links may not work.
+
+
