@@ -23,23 +23,26 @@ describe "Header" do
 		end
 
 		describe "Blog list elements" do			
-		  it "this it should be removed when pending is removed" do
-			pending "this test is passing but it should not be"
+			#create blogs into the test db
 			blogs= Array.new() 
 			6.times do |i|
-			 	 b = Blog.new(content: "my blog", title: 'my title')
+			 	 b = Blog.new(content: "my blog", title: "my title #{i}" )
 			 	 b.save
 			 	 blogs << b
 			end
-			
-
-			#get the first 5 blog posts
+			#loop over the 6 blog entries
 			blogs.each do |blog|
-				#save_and_open_page	
-				it { should have_selector('ul.accordmobile li#blog ul li a', text: blog.title, href: blog_path(blog.id)) }
+				# the 6th blog entry should not be displayed - it is the one we created first, we are displaying in descending order
+				if blog.title.include? '0' then
+					 it { should_not have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
+					 next
+				end
+				it { should have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
 			end
+
+			after { save_and_open_page }
 		  end
-		end
+		
 		
 		
 	end
