@@ -40,8 +40,23 @@ describe "Header" do
 				it { should have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
 			end
 		  end
-		
-		
+
+		  describe "faq" do
+		  	it { should have_link('FAQ', href: faq_path) } 
+		  end
+
+		  
+		  	it "click faq" do
+		  		click_link('FAQ')
+		  		page.should have_selector('h2', text: 'Frequently Asked Questions')
+		  	end
+
+		  	it { should have_link 'About Us', href: about_path }
+
+		  	it "click about" do
+		  		click_link('About Us')
+		  		page.should have_selector('h2', text: 'About Us')
+		  	end
 		
 	end
 

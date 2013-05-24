@@ -13,6 +13,8 @@ Quantum::Application.routes.draw do
   #match '/contact', to: 'static_pages#contact'
   match 'contact' => 'contact_us#new', :as => 'contact', :via => :get
   match 'contact' => 'contact_us#create', :as => 'contact', :via => :post
+  match 'faq', to: 'static_pages#faq'
+  match 'about', to: 'static_pages#about'
   
   
   # The priority is based upon order of creation:

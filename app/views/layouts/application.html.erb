@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+  <!DOCTYPE html>
+  <html>
+  <head>
   <title>Rails Fever | Building Web Sites and Apps using Ruby on Rails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
@@ -10,10 +10,10 @@
 
    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 
-	<!--[if lt IE 9]>
-	        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-  
+  <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
   <!-- FOR GOOGLE ANALYTICS -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -27,8 +27,8 @@
     })();
   </script>
 
-</head>
-<body class="index-flex-light">
+  </head>
+  <body class="index-flex-light">
 
   <%= render 'layouts/header' %>
   <!-- RENDER FLASH MESSAGES -->
@@ -36,18 +36,20 @@
     <div class="alert alert-<%= key %>"> <%= value %> </div>
   <% end %>
 
-  <%= yield %>
+  <div id="page"> 
+    <%= yield %>
 
-  <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
 
-  <!-- for fixing sqeunce jscript error on pages -->
-  <span id="sequence"> </span>
+    <!-- for fixing sqeunce jscript error on pages -->
+    <span id="sequence"> </span>
+  </div>
 
   <%= javascript_include_tag "application" %>
-</body>
+  </body>
 
 
 
 
 
-</html>
+  </html>
