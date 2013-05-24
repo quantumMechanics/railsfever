@@ -39,8 +39,6 @@ describe "Header" do
 				end
 				it { should have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
 			end
-
-			after { save_and_open_page }
 		  end
 		
 		
