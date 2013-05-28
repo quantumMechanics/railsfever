@@ -51,11 +51,11 @@ describe "Header" do
 		  		page.should have_selector('h2', text: 'Frequently Asked Questions')
 		  	end
 
-		  	it { should have_link 'About Us', href: about_path }
+		  	it { should have_link 'About', href: about_path }
 
 		  	it "click about" do
-		  		click_link('About Us')
-		  		page.should have_selector('h2', text: 'About Us')
+		  		click_link('About')
+		  		page.should have_selector('h2', text: 'About Me')
 		  	end
 		
 	end
