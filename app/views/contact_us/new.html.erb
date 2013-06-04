@@ -1,27 +1,77 @@
 
-<header>
-  <a id ="logo-not-homepage" href=<%= root_path %> > 
-    <p class="logo-top-down center-text">r<br/>a<br/>i<br/>l<br/>s<br/><br/>f<br/>e
-      <br/>v<br/>e<br/>r
-    </p>
-  </a>
+   <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script>
+    function initialize() {
+      var map_canvas = document.getElementById('map_canvas');
+      var map_options = {
+        center: new google.maps.LatLng(38.897678, -77.036517),
+        zoom: 22,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(map_canvas, map_options)
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+    <style>
+      #map_canvas {
+        //width: 500px;
+        height: 650px;
+      }
+    </style>
 
-</header>
+
+  <div class="hero-unit">
+    <div class="container">
+      <h1>Contact</h1>
+    </div>
+    <!--close container--> 
+  </div>
+  <!--close hero-unit-->
 
 
-<%= form_for @message, :url => contact_path do |form| %>
-  
-  <div class="row-fluid">
-    <fieldset>
-      <%= form.text_field :first_name, placeholder: "First Name" %>
-      <%= form.text_field :last_name, placeholder: "Last Name" %>
-      <%= form.email_field :email, placeholder: "Email" %>
-      <%= form.telephone_field :tel, placeholder: "Telephone Number" %>
-      <%= form.text_field :subject, placeholder: "Subject" %>
-      <%= form.text_area :body, rows:10, placeholder: "Please describe your project" 
-      %>
-      <%= form.button "Send", class: "pull-right button" %>
-    </fieldset>
-  </div> 
 
-<% end %>
+<div class="container clearfix" id="main-content">
+    <div class="row-fluid reverse-order contact-page">
+      <p class="clearfix"> Crisp has permanently altered the concept of platforms. We apply the proverb "The early bird catches the worm" not only to our solutions but our power to streamline. If you synergize robustly, you may have to e-enable virally. We always morph 60/24/7/365 1000/60/60/24/7/365 bloatware. </p>
+      <hr />
+      <div id="map_canvas" class="span5"></div>
+      <!--close span5 -->
+      
+      <div class="span7">
+          <%= form_for @message, :url => contact_path do |form| %>
+       
+              <fieldset>
+                <div class="control-group">
+                  <%= form.label :first_name, 'First Name' %>
+                  <%= form.text_field :first_name, class: "span10" %>
+                </div>
+                <div class="control-group">
+                  <%= form.label :last_name, 'Last Name' %>
+                  <%= form.text_field :last_name, class: "span10" %>
+                </div>
+                <div class="control-group">
+                  <%= form.label :email, 'Email' %>
+                  <%= form.email_field :email, class: "span10" %>
+                </div>
+                <div class="control-group">
+                  <%= form.label :tel , 'Telephone' %>
+                  <%= form.telephone_field :tel, class: "span10" %>
+                </div>
+                <div class="control-group">
+                  <%= form.label :subject %>
+                  <%= form.text_field :subject, class: "span10" %>
+                </div>
+                <div class="control-group">
+                  <%= form.label :body, 'Your Message' %>
+                  <%= form.text_area :body, rows:3, class: "span10" %>
+                </div>
+                <%= form.button "Send", class: "btn btn-primary btn-large" %>
+              </fieldset>
+
+        <% end %>
+      </div>
+      <!--close span7 --> 
+    </div>
+    <!--close row-fluid--> 
+  </div>
+  <!--close .container role="main-content" --> 
