@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'requests/shared'
 
 describe "ContactPage" do 
 
