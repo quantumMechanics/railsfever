@@ -1,23 +1,6 @@
 
    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script>
-    function initialize() {
-      var map_canvas = document.getElementById('map_canvas');
-      var map_options = {
-        center: new google.maps.LatLng(38.897678, -77.036517),
-        zoom: 22,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-      var map = new google.maps.Map(map_canvas, map_options)
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
-    <style>
-      #map_canvas {
-        //width: 500px;
-        height: 650px;
-      }
-    </style>
+  
 
 
   <div class="hero-unit">
@@ -32,12 +15,11 @@
 
 <div class="container clearfix" id="main-content">
     <div class="row-fluid reverse-order contact-page">
-      <p class="clearfix"> Crisp has permanently altered the concept of platforms. We apply the proverb "The early bird catches the worm" not only to our solutions but our power to streamline. If you synergize robustly, you may have to e-enable virally. We always morph 60/24/7/365 1000/60/60/24/7/365 bloatware. </p>
+      <p class="clearfix"> Do you want to find out more about the services we offer? Do you have a project in mind? Is your application in need of rescue? Are you planning for the next phase of your project? Whatever your needs are, we will be happy to hear from you!  </p>
       <hr />
-      <div id="map_canvas" class="span5"></div>
-      <!--close span5 -->
       
-      <div class="span7">
+      
+      <div class="span5">
           <%= form_for @message, :url => contact_path do |form| %>
        
               <fieldset>
@@ -70,7 +52,9 @@
 
         <% end %>
       </div>
-      <!--close span7 --> 
+      <!--close span5 --> 
+      <div id="map_canvas" class="span7"></div>
+      <!--close span7 -->
     </div>
     <!--close row-fluid--> 
   </div>
