@@ -19,7 +19,7 @@
 //= require fancybox/source/helpers/jquery.fancybox-thumbs
 //= require fancybox/source/helpers/jquery.fancybox-media
 //= require fancybox/source/helpers/jquery.fancybox-buttons
-//= require jquery_ujs
 //= require_self
+//= require jquery_ujs
 //= require_tree .
 
