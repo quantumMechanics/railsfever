@@ -32,7 +32,25 @@
 				</li>
 				<li><a href="<%= about_path %>">About</a></li>
 				<li><a href="<%= contact_path %>">Contact</a></li>
-				
+				<% if signed_in? %>
+					<li class="parent">
+						<a href="#">Admin <i></i> </a>
+						<ul>
+	        				<%= link_to 'New Blog', new_blog_path %>
+	        				<li><%= link_to "view my account", current_user %></li>
+	       					<li><%= link_to "edit my account", 
+	             				edit_user_path(current_user) %>
+	             			</li>
+	        				<li><%= link_to "view all users", users_path %></li>
+	        				<% if admin? %>
+	        					<li><%= link_to "view all comments", comments_path %></li>
+	        				<% end %>
+	        				<li> <%= link_to 'Log Out', signout_path, 
+	        				method: 'delete' %> </li> 
+		      				
+						</ul>
+					</li>
+				<% end %>
 			</ul>
 		</nav>
 		<!-- close / #main_menu --> 
