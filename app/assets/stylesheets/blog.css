@@ -74,6 +74,14 @@
     width: 85%;
 }
 
+/* Added by wale since we are going full width on blog index. 
+This allows the date to display left justified*/
+.span12.blog-summary .entry-content,
+.span12.blog-summary .entry-header {
+    float: right;
+    width: 85%;
+}
+
 .span6.blog-summary .entry-content,
 .span6.blog-summary .entry-header {
 	float: right;
@@ -304,6 +312,16 @@
     .span9 .blog.date .month { font-size: 10px }
     .span9 .blog.date .year { display: none }
     .span9 .blog-detail .date_share .addthis_toolbox {
+        clear: both;
+        padding-top: 30px;
+        margin-left: 15px;
+        width: 16px;
+    }
+    /* added by wale since I changed blog index to span12 */
+    .span12 .blog.date .day { font-size: 16px }
+    .span12 .blog.date .month { font-size: 10px }
+    .span12 .blog.date .year { display: none }
+    .span12 .blog-detail .date_share .addthis_toolbox {
         clear: both;
         padding-top: 30px;
         margin-left: 15px;
