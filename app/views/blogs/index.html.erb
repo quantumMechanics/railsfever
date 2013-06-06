@@ -1,50 +1,99 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container"> 
-      <nav> 
-        <ul class="nav pull-right">
-          <li> <%= link_to 'Sign In', signin_path %> </li>
-          <% if signed_in? %>
-            <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", 
-                 edit_user_path(current_user) %></li>
-            <li><%= link_to "Users", users_path %></li>
-            <li> <%= link_to 'Sign Out', signout_path, method: 'delete' %> </li> 
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-  </div> 
-</header>
+
 
 <div class="container">
  
     
 
-  <% @blogs.each do |blog| %>
-    
-      <h1> <%=link_to blog.title, blog %> </h1>
-      <p> <%= blog.content %></p>
-
-      <ul>
-      <% if admin? %>
-        <li> <%= link_to 'Edit', edit_blog_path(blog) %> </li>
-        <li> <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </li>
-      <% end %>
-      </ul>
-
-  <% end %>
-
   
+    
+    
+      
+
+
+
 
   <br />
 
-  <% if signed_in? %>
-    <%= link_to 'New Blog', new_blog_path %>
-  <% end %>
   <%= will_paginate @blogs %>
 
   <%= debug(params) if Rails.env.development? %>
 
 </div>
+
+
+<div class="hero-unit">
+    <div class="container">
+      <h2>Blog</h2>
+    </div>
+    <!--close container--> 
+  </div>
+  <!--close hero-unit-->
+  
+  <div class="container clearfix" id="main-content"> 
+    <!--begin main content-->
+    <div class="row-fluid "> 
+      <!--begin row-fluid-->
+      <div class="span12 blog-summary primary-column"> 
+        
+        <% @blogs.each do |blog| %>
+          <!-- begin entry-post -->
+          <article class="entry-post">
+            <header class="entry-header">
+              <h3 class="entry-title"> <%=link_to blog.title, blog %> </h3>
+              <div class="byline">
+                 
+                <i class="icon-time"></i> <abbr class="published" title="<%= blog.created_at %>"> <%= blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
+                <%= link_to blog do %>
+                  <i class="icon-comments-alt"></i>
+                  <%= pluralize(blog.comments.count,"comment") %>
+                <% end %>
+              </div>
+            </header>
+            <!--end entry-header --> 
+            
+            <!--begin loop of entry-posts for summary page-->
+            
+            <div class="entry-content">
+              <p> <%= truncate(blog.content, length: 800, seperator: ' ' ) %> </p>
+              <p class="more right">
+                <%= link_to blog, class: 'btn btn-primary' do %>
+                  Read More &rarr;
+                <% end %> 
+                <% if admin? %>
+                  <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-primary' %> 
+                  <%= link_to 'Destroy', blog, 
+                        method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+                <% end %>
+              </p>
+            </div>
+            <!-- close entry-content -->
+            
+            <footer class="entry-footer"> 
+              <span class="blog date"> 
+                <span class="month"><%= blog.created_at.strftime("%b")%></span> 
+                <span class="day"><%= blog.created_at.strftime("%-d")%></span> 
+                <span class="year"><%= blog.created_at.strftime("%Y")%></span> 
+              </span> 
+            </footer>
+            <!--end entry-footer--> 
+          </article>
+          <!-- end entry-post --> 
+        <% end %>
+        
+        <!--end loop of entry-posts for summary page-->
+        
+        <div class="pagination pagination-right no-margin pagination-mini">
+          <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li class="active"><span>3</span></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- close .span9 . primary-column .blog-summary-->
+    </div>
+    <!--close row-fluid--> 
+  </div>
+  <!--close .container id="main-content" --> 
