@@ -4,7 +4,7 @@
   <title>Rails Fever | Building Web Sites and Apps using Ruby on Rails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  <meta name="author" content="akinwale olaleye">
+  <meta name="<author" content="akinwale olaleye">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -44,8 +44,9 @@
     <!-- for fixing sqeunce jscript error on pages -->
     <span id="sequence"> </span>
   </div>
-
+  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false" %>
   <%= javascript_include_tag "application" %>
+
   </body>
 
 
