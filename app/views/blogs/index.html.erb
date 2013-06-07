@@ -1,26 +1,7 @@
-
-
 <div class="container">
- 
-    
-
-  
-    
-    
-      
-
-
-
-
-  <br />
-
-  <%= will_paginate @blogs %>
-
-  <%= debug(params) if Rails.env.development? %>
-
+  <%= will_paginate @blogs, class: 'pagination pagination-right no-margin pagination-mini', 
+      previous_label: '<', next_label: '>', renderer: 'FeverRenderer' %>
 </div>
-
-
 <div class="hero-unit">
     <div class="container">
       <h2>Blog</h2>
@@ -82,18 +63,13 @@
         
         <!--end loop of entry-posts for summary page-->
         
-        <div class="pagination pagination-right no-margin pagination-mini">
-          <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li class="active"><span>3</span></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-        </div>
+        <%= will_paginate @blogs, class: 'pagination pagination-right no-margin pagination-mini', 
+      previous_label: '<', next_label: '>', renderer: 'FeverRenderer' %>
       </div>
       <!-- close .span9 . primary-column .blog-summary-->
     </div>
     <!--close row-fluid--> 
+
+    <%= debug(params) if Rails.env.development? %>
   </div>
   <!--close .container id="main-content" --> 

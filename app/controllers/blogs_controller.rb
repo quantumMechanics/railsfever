@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs =  Blog.paginate(page: params[:page])
+    @blogs =  Blog.paginate(page: params[:page], per_page: 8)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     cookies[:blog_id] = {value: params[:id]}
     
     @comment = Comment.new
-    @comments = @blog.comments.paginate(page: params[:page])
+    @comments = @blog.comments.paginate(page: params[:page], per_page: 10)
     
     respond_to do |format|
       format.html # show.html.erb
