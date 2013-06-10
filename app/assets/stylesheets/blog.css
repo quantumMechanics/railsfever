@@ -104,7 +104,12 @@ This allows the date to display left justified*/
 .span9.blog-detail .entry-content,
 .span9.blog-detail .entry-tags,
 .span9.blog-detail .entry-pagination,
-.span9.blog-detail .entry-related
+.span9.blog-detail .entry-related,
+.span12.blog-detail .entry-header,
+.span12.blog-detail .entry-content,
+.span12.blog-detail .entry-tags,
+.span12.blog-detail .entry-pagination,
+.span12.blog-detail .entry-related
  {
     float: right;
     width: 87%;
