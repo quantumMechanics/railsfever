@@ -2,6 +2,7 @@ FactoryGirl.define do
 
 	factory :blog do
 		content "This is my new factory blog"
+		title "Blog Title"
 	end
 
 	factory :comment do

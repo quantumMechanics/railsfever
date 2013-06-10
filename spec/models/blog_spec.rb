@@ -3,13 +3,15 @@ require 'spec_helper'
 describe Blog do
   
   before do
-  	@blog = Blog.new(content: "my blog")
+  	@blog = Blog.new(content: "my blog", title: "nice post")
   end
 
   subject { @blog }
 
   	it { should respond_to :content }
   	it { should respond_to :title }
+  	it { should respond_to :previous_post }
+  	it { should respond_to :next_post }
   	it { should be_valid }
 
   
