@@ -1,24 +1,111 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <h1> <%= @blog.title %> </h1>
-  <%= @blog.content %>
-</p>
- 
+<div class="container clearfix" id="main-content"> 
+		<!--begin main content-->
+		<div class="row-fluidblog"> 
+			<!--begin row-fluid-->
+			<div class="span12 blog-detail primary-column"> 
+				<!--begin primary-column-->
+				<article class="entry-post">
+					<header class="entry-header">
+						<h1><%= @blog.title %></h1>
+						<div class="byline">
+							<i class="icon-time"></i> 
+							<abbr class="published" title="<%= @blog.created_at %>"> <%= @blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
+			                <%= link_to "#disqus_thread" do %>
+			                  <i class="icon-comments-alt"></i>
+			                <% end %>
+						</div>
+						
+						<!--add this share buttons for mobile viewers-->
+						<div class="addthis_toolbox addthis_16x16_style"> <a class="addthis_button_preferred_2"></a> <a class="addthis_button_preferred_3"></a> <a class="addthis_button_preferred_7"></a> <a class="addthis_button_preferred_6"></a> <a class="addthis_button_preferred_10"></a> <a class="addthis_button_preferred_4"></a> <a class="addthis_button_compact"></a> </div>
+					</header>
+					<!--end entry-header-->
+					
+					<div class="entry-content">
+						
+						<p> 
+							<%= @blog.content %>	
+						</p>
+					</div>
+					<!--end entry-content-->
+					
+					<footer class="entry-footer"> 
+						
+						<%= render partial: "created_at", locals: {blog: @blog} %>
+						
+						<!-- add this share buttons for desktop and larger screens -->
+						<div class="addthis_toolbox addthis_16x16_style"> <a class="addthis_button_preferred_2"></a> <a class="addthis_button_preferred_3"></a> <a class="addthis_button_preferred_7"></a> <a class="addthis_button_preferred_6"></a> <a class="addthis_button_preferred_10"></a> <a class="addthis_button_preferred_4"></a> <a class="addthis_button_compact"></a> </div>
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50b7b03737b7ccb9"></script> 
+						<!-- AddThis Button END --> 
+					</footer>
+					<!--end entry-footer--> 
 
-<% if signed_in? %>
-	<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<% end %>
-<%= link_to 'Back', blogs_path %>
+					<% if admin? %>
+						<p class="more right">
+							<%= link_to 'Edit', edit_blog_path(@blog), 
+								class: 'btn btn-primary' %>
+						</p>
+					<% end %>
+					
+				</article>
+				<!--end entry-post -->
+				
+				<div class="entry-pagination">
+					<ul class="pager">
+						<% if @blog.previous_post %>
+							<li>	
+								<%= link_to @blog.previous_post do %>
+									&larr; Older
+								<% end %>
+							</li>
+						<% end %>
+						<% if @blog.next_post %>
+							<li>	
+								<%= link_to @blog.next_post do %>
+									Newer &rarr;
+								<% end %>
+							</li>
+						<% end %>						
+					</ul>
+					<!--close pager--> 
+				</div>
+				<!--end entry-pagination-->
+				
 
-<%= render 'shared/comment_form' %>
+				<div id="disqus_thread"></div>
 
-<% if @blog.comments.any? %>
-	<h3> <%= pluralize(@blog.comments.count,"comment") %></h3>
-	<ol>        
-		<%= render @comments %> 
-		<%= will_paginate @comments %>
-	</ol>
-<% end %>
 
-<%= debug(params) if Rails.env.development? %>
+	<%= debug(params) if Rails.env.development? %>
+
+
+	<script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'railsfever'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    <!--  for displaying comment count  -->
+    <script type="text/javascript">
+	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	    var disqus_shortname = 'railsfever'; // required: replace example with your forum shortname
+
+	    /* * * DON'T EDIT BELOW THIS LINE * * */
+	    (function () {
+	        var s = document.createElement('script'); s.async = true;
+	        s.type = 'text/javascript';
+	        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	    }());
+    </script>
+     
+
+

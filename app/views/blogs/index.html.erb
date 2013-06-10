@@ -12,7 +12,7 @@
   
   <div class="container clearfix" id="main-content"> 
     <!--begin main content-->
-    <div class="row-fluid "> 
+    <div class="row-fluid"> 
       <!--begin row-fluid-->
       <div class="span12 blog-summary primary-column"> 
         
@@ -24,10 +24,9 @@
               <div class="byline">
                  
                 <i class="icon-time"></i> <abbr class="published" title="<%= blog.created_at %>"> <%= blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
-                <%= link_to blog do %>
-                  <i class="icon-comments-alt"></i>
-                  <%= pluralize(blog.comments.count,"comment") %>
-                <% end %>
+                <a href="<%= blog_path(blog.id) %>#disqus_thread">Comments</a>
+                
+                
               </div>
             </header>
             <!--end entry-header --> 
@@ -50,11 +49,7 @@
             <!-- close entry-content -->
             
             <footer class="entry-footer"> 
-              <span class="blog date"> 
-                <span class="month"><%= blog.created_at.strftime("%b")%></span> 
-                <span class="day"><%= blog.created_at.strftime("%-d")%></span> 
-                <span class="year"><%= blog.created_at.strftime("%Y")%></span> 
-              </span> 
+              <%= render partial: "created_at", locals: {blog: blog} %>
             </footer>
             <!--end entry-footer--> 
           </article>
@@ -73,3 +68,17 @@
     <%= debug(params) if Rails.env.development? %>
   </div>
   <!--close .container id="main-content" --> 
+
+  <!--  for displaying comment count  -->
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'railsfever'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
