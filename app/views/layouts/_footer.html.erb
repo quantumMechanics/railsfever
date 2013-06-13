@@ -14,6 +14,7 @@
 		<div class="span4">
 			<section>
 				<h4>Contact Us</h4>
+				<p>We will be happy to meet with you to discuss more!</p>
 				<p>Rails Fever<br>
 					Philadelphia<br>
 					Pennsylvania USA<br>
@@ -23,15 +24,10 @@
 			<!--close section-->
 			
 			<section>
-				<h4>Follow Us</h4>
-				<ul class="social">
-					<li><a class="socicon rss" href="#" title="RSS"></a></li>
-					<li><a class="socicon facebook" href="#" title="Facebook"></a></li>
-					<li><a class="socicon twitterbird" href="#" title="Twitter"></a></li>
-					<li><a class="socicon linkedin" href="#" title="LinkedIn"></a></li>
-					<li><a class="socicon dribbble" href="#" title="dribble"></a></li>
-					<li><a class="socicon vimeo" href="#" title="Vimeo"></a></li>
-				</ul>
+				<h4>Status</h4>
+					<p>
+						Actively seeking new clients
+					</p>	
 			</section>
 			<!--close section--> 
 
@@ -47,36 +43,44 @@
 		<!--section containing newsletter signup and recent images-->
 		<div class="span4">
 			<section>
-				<h4>Stay Updated</h4>
-				<p>Sign up for our crispy newsletter. We won't share your email address.</p>
-				<form action="yourscript.php" method="post">
-					<div class="input-append">
-						<input type="email" placeholder="Email Address" class="span6" name="email" />
-						<button class="btn btn-primary">Sign Up</button>
-					</div>
-					<!--close input-append-->
-				</form>
+				<h4>Recent News</h4>
+				<p>
+					<a href="http://ankane.github.io/chartkick/">
+						Beautiful Javascript charts with one line of Ruby
+					<a>
+				</p>
+				<p>
+					<a href="https://deadmanssnitch.com/">
+						Ensure your periodic tasks are actually running
+					<a>
+				</p>
+				<p>
+					<a href="http://railsgirlssummerofcode.org/campaign/">
+						Help Rails Girls students get into open source projects
+					<a>
+				</p>
+				<p>
+					<a href="http://37signals.com/svn/posts/3432-why-i-loved-building-basecamp-for-iphone-in-rubymotion">
+						Building Basecamp for iPhone in RubyMotion
+					<a>
+				</p>
+				<p>
+					<a href="http://blog.programmableweb.com/2013/05/30/heroku-launches-platform-api/">
+						Heroku Launches Platform API
+					<a>
+				</p>
+				<p>
+					<a href="http://venturebeat.com/2013/05/09/white-house-drafts-official-open-data-policy-of-the-united-states-on-github/#lUqdMOwEPFljQFrq.99">
+						White House drafts official ODP of the U.S on GitHub
+					<a>
+				</p>
+				<p>
+					<a href="http://venturebeat.com/2013/06/07/at-our-current-rate-of-progress-ipv6-will-be-fully-implemented-on-may-10-2048/#9qUOetFzq1BJTq52.99">
+						IPv6 will be fully implemented on May 10, 2148
+					<a>
+				</p>
 			</section>
 			<!--close section-->
-			
-			<section>
-				<h4>Recent Images</h4>
-				<ul class="image-widget clearfix">
-					<li><a href="#"><%= image_tag src="demo/image-widget/1.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/2.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/3.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/4.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/5.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/6.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/7.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/8.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/9.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/10.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/11.png", alt: "" %></a></li>
-					<li><a href="#"><%= image_tag src="demo/image-widget/12.png", alt: "" %></a></li>
-				</ul>
-			</section>
-			<!--close section--> 
 		</div>
 		<!-- close .span4 --> 
 		
@@ -85,12 +89,18 @@
 			<section>
 				<h4>Latest Blog Posts</h4>
 				<ul class="footerPosts">
-					<li><a href="blog-single.html">We will amplify our power to benchmark</a> <span class="meta">December 10, 2012</span> </li>
-					<li><a href="blog-single.html">Crisp has revolutionized the conceptualization of structuring</a> <span class="meta">September 10, 2012</span> </li>
-					<li><a href="blog-single.html">A company that can implement correctly</a> <span class="meta">September 10, 2012</span> </li>
-					<li><a href="blog-single.html">Claritas est etiam processus dynamicus</a> <span class="meta">September 10, 2012</span> </li>
-					<li><a href="blog-single.html">It is stunning to you!</a> <span class="meta">September 10, 2012</span> </li>
-					<li><a href="blog-single.html">We will increase our aptitude to evolve </a> <span class="meta">November 15, 2012</span> </li>
+					<% Blog.limit(6).each do |b| %>
+							<li> 
+								<%= link_to( 
+									truncate(b.title, length: 40, seperator: ' '), 
+									blog_path(b.id)) 
+								%> 
+								<span class="meta">
+									<%= b.created_at.strftime("%B %-d, %Y") 
+									%>
+								</span>
+							</li>
+					<% end %>
 				</ul>
 			</section>
 		</div>
@@ -106,7 +116,6 @@
 		<ul class="clearfix">
 			<li>© 2013 Rails Fever. All rights reserved.</li>
 			<li><a href="sitemap.html">Site Map</a></li>
-			<li><a href="privacy.html">Privacy</a></li>
 		</ul>
 	</div>
 	<!--footerCredits container--> 
