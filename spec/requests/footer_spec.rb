@@ -6,6 +6,11 @@ describe "Footer"  do
 	
 	it { should have_link 'Login', href: signin_path }
 
+	describe "Contact Us" do
+		it { should have_selector('div.span4 section h4', text: 'Contact Us')}
+		it { should have_selector('div.span4 section p', text:'Rails Fever')}
+	end
+
 	describe "Latest Blog Posts" do			
 		#create blogs into the test db
 		blogs= Array.new() 
