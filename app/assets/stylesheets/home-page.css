@@ -13,36 +13,23 @@
     background: #dfcea1;
     padding: 5% 7% 5% 7%;
 }
-
 .banner p {
 	font-size: 120%;
 }
 
-/******************************************************/
-/*	DEVICES greater than 980 pixels wide
-******************************************************
-====================================================== */
 
 @media only screen and (min-width: 980px) {
-	.banner p {
-	font-size: 120%;
-	}
+	.banner p { font-size: 120%; }
 }
 @media only screen and (min-width: 1100px) {
-	.banner p {
-	font-size: 130%;
-	}
+	.banner p { font-size: 130%; }
 }
-
 @media only screen and (max-width: 767px) {
-	.banner p {
-	font-size: 100%;
+	.banner p { font-size: 100%; }
 }
 
 @media only screen and (max-width: 500px) {
 	.banner .hero-unit h1 { font-size: 24px; }
-
 	.banner h1 { font-size: 145%; }
 	.banner p { font-size: 100%; }
 }
-
