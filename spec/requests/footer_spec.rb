@@ -4,14 +4,20 @@ describe "Footer"  do
 	subject { page }
 	before { visit root_path }
 	
-	it { should have_link 'Login', href: signin_path }
+	pending do
+		it { should have_link 'Login', href: signin_path }
+		it { should have_link "Contact Us", href: contact_path }
+		it { should have_link "Latest Blog Posts", href: blogs_path }
+	end
 
 	describe "Contact Us" do
+		
 		it { should have_selector('div.span4 section h4', text: 'Contact Us')}
 		it { should have_selector('div.span4 section p', text:'Rails Fever')}
 	end
 
-	describe "Latest Blog Posts" do			
+	describe "Latest Blog Posts" do	
+
 		#create blogs into the test db
 		blogs= Array.new() 
 		7.times do |i|
