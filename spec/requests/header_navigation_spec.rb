@@ -24,6 +24,7 @@ describe "Header" do
 			#create blogs into the test db
 			blogs= Array.new() 
 			6.times do |i|
+				 title = "my title #{Random.rand(10000)}"
 			 	 b = Blog.new(content: "my blog", title: "my title #{i}" )
 			 	 b.save
 			 	 blogs << b
@@ -31,23 +32,27 @@ describe "Header" do
 			#loop over the 6 blog entries
 			blogs.each do |blog|
 				# the 6th blog entry should not be displayed - it is the one we created first, we are displaying in descending order
-				if blog.title.include? '0' then
-					 it { should_not have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
+				if blog == blog[0] then
+					 it { should_not have_selector('header ul.accordmobile li#blog ul li a', text: blog.title ) }
 					 next
 				end
-				it { should have_selector('ul.accordmobile li#blog ul li a', text: blog.title ) }
+				it { should have_selector('header ul.accordmobile li#blog ul li a', text: blog.title ) }
 			end
+
+			
 		  end
 
-		  describe "faq" do
-		  	it { should have_link('FAQ', href: faq_path) } 
-		  end
+		  pending "faq" do
+		  	it { should have_link('FAQ', href: faq_path) }
 
-		  
 		  	it "click faq" do
 		  		click_link('FAQ')
 		  		page.should have_selector('h2', text: 'Frequently Asked Questions')
 		  	end
+		  end
+
+		  
+		  	
 
 		  	it { should have_link 'About', href: about_path }
 
