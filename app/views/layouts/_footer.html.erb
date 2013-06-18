@@ -43,6 +43,31 @@
 		</div>
 		<!-- close .span4 --> 
 		
+		
+		
+		<!--section containing blog posts-->
+		<div class="span4">
+			<section>
+				
+				<h4>Latest Blog Posts</h4>
+				<ul class="footerPosts">
+					<% Blog.limit(6).each do |b| %>
+							<li> 
+								<%= link_to( 
+									truncate(b.title, length: 40, seperator: ' '), 
+									blog_path(b.id)) 
+								%> 
+								<span class="meta">
+									<%= b.created_at.strftime("%B %-d, %Y") 
+									%>
+								</span>
+							</li>
+					<% end %>
+				</ul>
+			</section>
+		</div>
+		<!-- close .span4 --> 
+
 		<!--section containing newsletter signup and recent images-->
 		<div class="span4">
 			<section>
@@ -84,29 +109,6 @@
 				</p>
 			</section>
 			<!--close section-->
-		</div>
-		<!-- close .span4 --> 
-		
-		<!--section containing blog posts-->
-		<div class="span4">
-			<section>
-				
-				<h4>Latest Blog Posts</h4>
-				<ul class="footerPosts">
-					<% Blog.limit(6).each do |b| %>
-							<li> 
-								<%= link_to( 
-									truncate(b.title, length: 40, seperator: ' '), 
-									blog_path(b.id)) 
-								%> 
-								<span class="meta">
-									<%= b.created_at.strftime("%B %-d, %Y") 
-									%>
-								</span>
-							</li>
-					<% end %>
-				</ul>
-			</section>
 		</div>
 		<!-- close .span4 --> 
 	</div>
