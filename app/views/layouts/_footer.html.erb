@@ -13,6 +13,14 @@
 	<div class="row-fluid">
 		<div class="span4">
 			<section>
+				<h4>Status</h4>
+					<p>
+						Actively seeking new clients
+					</p>	
+			</section>
+			<!--close section--> 
+
+			<section>
 				<h4>Contact Us</h4>
 				<p>We will be happy to meet with you to discuss more!</p>
 				<p>Rails Fever<br>
@@ -24,17 +32,11 @@
 			</section>
 			<!--close section-->
 			
-			<section>
-				<h4>Status</h4>
-					<p>
-						Actively seeking new clients
-					</p>	
-			</section>
-			<!--close section--> 
+			
 
 			<section>
-				<div class="user clearfix "> 
-					<a href=<%= signin_path %> ><i class="icon-user"></i> Login</a> 
+				<div class="user clearfix visuallyhidden"> 
+					<a href=<%= signin_path %> ><i class="icon-user"></i></a> 
 				</div>
 			</section>
 			<!--close section -->
@@ -88,6 +90,7 @@
 		<!--section containing blog posts-->
 		<div class="span4">
 			<section>
+				
 				<h4>Latest Blog Posts</h4>
 				<ul class="footerPosts">
 					<% Blog.limit(6).each do |b| %>
