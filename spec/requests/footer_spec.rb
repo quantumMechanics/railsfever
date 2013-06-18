@@ -21,19 +21,19 @@ describe "Footer"  do
 		#create blogs into the test db
 		blogs= Array.new() 
 		7.times do |i|
-		 	 b = Blog.new(content: "my blog", title: "my title #{i}" )
+		 	 b = Blog.new(content: "my blog", title: "my title #{i + 10}" )
 		 	 b.save
 		 	 blogs << b
 		end
 		#loop over the 7 blog entries
 		blogs.each do |blog|
 			# the 7th blog entry should not be displayed - it is the one we created first, we are displaying in descending order
-			if blog.title.include? '0' then
-				 it { should_not have_selector('ul.footerPosts li a', text: blog.title ) }
+			if blog.title.include? '10' then
+				 it { should_not have_selector('footer ul.footerPosts li a', text: blog.title ) }
 				 next
 			end
-			it { should have_selector('ul.footerPosts li a', text: blog.title ) }
-			it { should have_selector('ul.footerPosts li span.meta', text: blog.created_at.strftime("%B %-d, %Y") ) }
+			it { should have_selector('footer ul.footerPosts li a', text: blog.title ) }
+			it { should have_selector('footer ul.footerPosts li span.meta', text: blog.created_at.strftime("%B %-d, %Y") ) }
 		end
   	end
 
