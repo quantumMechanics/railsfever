@@ -19,12 +19,12 @@ protected
 	end
 
 	def previous_or_next_page(page, text, classname)
-        if page
-          link(text, page, :class => classname)
-        else
-          link(text, '#', :class => classname + ' disabled')
-        end
-      end
+    if page
+      link(text, page, :class => classname)
+    else
+      link(text, '#', :class => classname + ' disabled')
+    end
+  end
 
 private
  
