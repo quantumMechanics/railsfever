@@ -19,8 +19,6 @@ describe "Blog" do
 		visit blogs_path
 	end
 
-	
-
 	describe "index entry" do
 		it_should_behave_like "blog entry header"
 		it { should have_selector('article > header > h3') }
