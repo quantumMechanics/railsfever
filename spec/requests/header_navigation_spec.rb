@@ -32,7 +32,7 @@ describe "Header" do
 			#loop over the 6 blog entries
 			blogs.each do |blog|
 				# the 6th blog entry should not be displayed - it is the one we created first, we are displaying in descending order
-				if blog == blog[0] then
+				if blog == blogs[0] then
 					 it { should_not have_selector('header ul.accordmobile li#blog ul li a', text: blog.title ) }
 					 next
 				end
