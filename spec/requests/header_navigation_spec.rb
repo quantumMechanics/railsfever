@@ -25,7 +25,7 @@ describe "Header" do
 			blogs= Array.new() 
 			6.times do |i|
 				 title = "my title #{Random.rand(10000)}"
-			 	 b = Blog.new(content: "my blog", title: "my title #{i}" )
+			 	 b = Blog.new(content: "my blog", title: title )
 			 	 b.save
 			 	 blogs << b
 			end

@@ -21,14 +21,15 @@ describe "Footer"  do
 		#create blogs into the test db
 		blogs= Array.new() 
 		7.times do |i|
-		 	 b = Blog.new(content: "my blog", title: "my title #{i + 10}" )
+			 title = "my title #{Random.rand(10000)}"
+		 	 b = Blog.new(content: "my blog", title: title )
 		 	 b.save
 		 	 blogs << b
 		end
 		#loop over the 7 blog entries
 		blogs.each do |blog|
 			# the 7th blog entry should not be displayed - it is the one we created first, we are displaying in descending order
-			if blog.title.include? '10' then
+			if blog == blogs[0] then
 				 it { should_not have_selector('footer ul.footerPosts li a', text: blog.title ) }
 				 next
 			end
