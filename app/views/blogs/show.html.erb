@@ -31,9 +31,10 @@
 					<!--end entry-header-->
 					
 					<div class="entry-content">		
-						<p> 
-							<%= @blog.content %>	
-						</p>
+						
+						<%= markdown @blog.content %>	
+
+						
 					</div>
 					<!--end entry-content-->
 					<footer class="entry-footer"> 	

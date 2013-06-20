@@ -34,7 +34,7 @@
             <!--begin loop of entry-posts for summary page-->
             
             <div class="entry-content">
-              <p> <%= truncate(blog.content, length: 800, seperator: ' ' ) %> </p>
+              <%= markdown truncate(blog.content, length: 800, seperator: ' ' ) %>
               <p class="more right">
                 <%= link_to blog, class: 'btn btn-primary' do %>
                   Read More &rarr;
