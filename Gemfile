@@ -10,6 +10,7 @@ gem 'jquery-rails', '2.0.2'
 #gem 'jquery-ui-rails', '4.0.1'
 gem 'animate-rails'
 gem 'redcarpet'
+gem 'friendly_id', '4.0.9'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

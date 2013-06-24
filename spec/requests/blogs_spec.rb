@@ -28,15 +28,26 @@ describe "Blog" do
 	end
 
 	describe "show" do
-		before { visit blog_path(blog.id) }
+		before { visit blog_path(blog.friendly_id) }
+		it_should_behave_like "blog entry header"
+		it { should have_selector('article > header > h1') }
+	end
+
+	describe "change title" do
+		before do 
+			orig_friendly_id = blog.friendly_id 
+			blog.title= "new title #{Random.rand(10000)} and #{Random.rand(10000)}"
+			blog.save
+			visit blog_path(orig_friendly_id) # visit the old path
+		end
 		it_should_behave_like "blog entry header"
 		it { should have_selector('article > header > h1') }
 	end
 
 	describe "previous next navigation" do
-		before { visit blog_path(blog.id) }
+		before { visit blog_path(blog.friendly_id) }
 		it { should have_selector('div.entry-pagination ul.pager li') }
-		it { should have_link("< Older", href: blog_path(blog_previous.id) )}
-		it { should have_link('Newer', href: blog_path(blog_next.id) )}
+		it { should have_link("< Older", href: blog_path(blog_previous.friendly_id) )}
+		it { should have_link('Newer', href: blog_path(blog_next.friendly_id) )}
 	end
 end

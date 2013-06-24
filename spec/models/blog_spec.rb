@@ -12,11 +12,17 @@ describe Blog do
   	it { should respond_to :title }
   	it { should respond_to :previous_post }
   	it { should respond_to :next_post }
+  	it { should respond_to :slug }
   	it { should be_valid }
 
   
   	describe "with blank content" do
   		before { @blog.content = " " }
+  		it { should_not be_valid }
+  	end
+
+  	describe "with blank title" do
+  		before { @blog.title = " " }
   		it { should_not be_valid }
   	end
 
@@ -58,5 +64,10 @@ describe Blog do
 		# 	Blog.all.should == [newer_blog, older_blog]
 		# end
 
+	end
+
+	describe "slug should not be blank" do
+		before { @blog.valid? } #do something to trigger a db search on the blog, which will cause the slug to be generated
+		it { @blog.slug.should_not be_nil }
 	end
 end

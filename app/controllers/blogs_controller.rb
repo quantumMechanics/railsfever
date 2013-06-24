@@ -17,15 +17,15 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
+    if request.path != blog_path(@blog)
+      redirect_to @blog, status: :moved_permanently
+    end
+
     cookies[:blog_id] = {value: params[:id]}
     
-    @comment = Comment.new
-    @comments = @blog.comments.paginate(page: params[:page], per_page: 10)
+    #@comment = Comment.new
+    #@comments = @blog.comments.paginate(page: params[:page], per_page: 10)
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @blog }
-    end
   end
 
   # GET /blogs/new
