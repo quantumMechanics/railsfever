@@ -24,7 +24,7 @@
               <div class="byline">
                  
                 <i class="icon-time"></i> <abbr class="published" title="<%= blog.created_at %>"> <%= blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
-                <a href="<%= blog_path(blog.id) %>#disqus_thread">Comments</a>
+                <a href="<%= blog_path(blog.friendly_id) %>#disqus_thread">Comments</a>
                 
                 
               </div>
