@@ -25,7 +25,7 @@
 						<% Blog.limit(5).each do |b| %>
 							<li> <%= link_to( 
 									truncate(b.title, length: 24, seperator: ' '), 
-									blog_path(b.id)) %> </li>
+									blog_path(b.friendly_id)) %> </li>
 						<% end %>
 					</ul>
 				</li>
