@@ -2,13 +2,14 @@ class Blog < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :visible
 
   has_many :comments, dependent: :destroy
 
   validates :content, presence: true
   validates :title, presence: true
   validates :slug, presence: true
+  validates :visible, presence: true
 
   default_scope order: 'blogs.created_at DESC'
 

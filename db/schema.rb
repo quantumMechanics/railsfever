@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624200933) do
+ActiveRecord::Schema.define(:version => 20140206024914) do
 
   create_table "blogs", :force => true do |t|
     t.text     "content",    :limit => 255
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.string   "title"
     t.string   "slug"
+    t.boolean  "visible",                   :default => false, :null => false
+    t.integer  "views",                     :default => 0
+    t.integer  "likes",                     :default => 0
   end
 
   add_index "blogs", ["slug"], :name => "index_blogs_on_slug", :unique => true
