@@ -9,7 +9,6 @@ class Blog < ActiveRecord::Base
   validates :content, presence: true
   validates :title, presence: true
   validates :slug, presence: true
-  validates :visible, presence: true
 
   default_scope order: 'blogs.created_at DESC'
 
