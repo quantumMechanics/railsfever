@@ -11,11 +11,12 @@ gem 'jquery-rails', '2.0.2'
 #gem 'jquery-ui-rails', '4.0.1'
 gem 'animate-rails'
 gem 'redcarpet'
-gem 'friendly_id', '4.0.9'
+gem 'friendly_id', '~> 4.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+  gem 'debugger', '~> 1.6.1'
   # gem 'guard-rspec', '1.2.1'
   # gem 'guard-spork', '1.2.0'  
   # gem 'spork', '0.9.2'
