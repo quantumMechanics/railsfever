@@ -74,8 +74,4 @@ describe Blog do
 		it { @blog.slug.should_not be_nil }
 	end
 
-	describe "when visible is blank" do
-		before { @blog.visible = " "}
-		it { should_not be_valid }
-	end
 end
