@@ -2,7 +2,8 @@ FactoryGirl.define do
 
 	factory :blog do
 		content "This is my new factory blog"
-		title { "Blog Title #{Random.rand(10000)}" }
+		title { Faker::Lorem.sentence(8) }
+		visible true
 	end
 
 	factory :comment do

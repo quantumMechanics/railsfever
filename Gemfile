@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.16'
 #gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -11,11 +11,12 @@ gem 'jquery-rails', '2.0.2'
 #gem 'jquery-ui-rails', '4.0.1'
 gem 'animate-rails'
 gem 'redcarpet'
-gem 'friendly_id', '4.0.9'
+gem 'friendly_id', '~> 4.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+  gem 'debugger', '~> 1.6.1'
   # gem 'guard-rspec', '1.2.1'
   # gem 'guard-spork', '1.2.0'  
   # gem 'spork', '0.9.2'
@@ -35,6 +36,7 @@ group :test do
   gem 'cucumber-rails', '1.2.1', :require => false
   gem 'database_cleaner', '0.7.0'
   gem 'launchy', '2.1.0'
+  gem 'selenium-webdriver', '2.39.0'
   # gem 'rb-fsevent', '0.9.1', :require => false
   # gem 'growl', '1.0.3'
 end

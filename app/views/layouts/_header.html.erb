@@ -22,7 +22,7 @@
 				<li><a href="<%= root_path %>">Home</a></li>
 				<li id="blog" class="parent"> <a href=<%=blogs_path %> > Blog <i></i> </a>
 					<ul>
-						<% Blog.limit(5).each do |b| %>
+						<% Blog.where(visible:true).limit(5).each do |b| %>
 							<li> <%= link_to( 
 									truncate(b.title, length: 24, seperator: ' '), 
 									blog_path(b.friendly_id)) %> </li>
