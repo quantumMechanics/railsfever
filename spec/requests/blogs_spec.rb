@@ -9,13 +9,12 @@ shared_examples_for "blog entry header" do
 end
 
 describe "Blog" do
-	let(:blog_previous) {FactoryGirl.create(:blog)}
+	
 	let(:blog) {FactoryGirl.create(:blog)}
-	let(:blog_next) {FactoryGirl.create(:blog)}
 	
 	subject { page }
 	
-	before do 
+	before do
 		visit blogs_path
 	end
 
@@ -45,9 +44,15 @@ describe "Blog" do
 	end
 
 	describe "previous next navigation" do
-		before { visit blog_path(blog.friendly_id) }
+		previous = FactoryGirl.create :blog 
+		blog = FactoryGirl.create :blog 
+		bnext = FactoryGirl.create :blog
+
+		before do
+			visit blog_path(blog.friendly_id)
+		end
 		it { should have_selector('div.entry-pagination ul.pager li') }
-		it { should have_link("< Older", href: blog_path(blog_previous.friendly_id) )}
-		it { should have_link('Newer', href: blog_path(blog_next.friendly_id) )}
+		it { should have_link('Older', href: blog_path(previous.friendly_id))}
+		it { should have_link('Newer', href: blog_path(bnext.friendly_id) )}
 	end
 end

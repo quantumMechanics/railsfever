@@ -16,15 +16,33 @@ describe "Footer"  do
 		it { should have_selector('div.span4 section p', text:'Rails Fever')}
 	end
 
-	describe "Latest Blog Posts" do	
+	describe "Invisible Blog Posts" do	
 
 		#create blogs into the test db
 		blogs= Array.new() 
-		7.times do |i|
+		1.times do |i|
 			 title = "my title #{Random.rand(10000)}"
-		 	 b = Blog.new(content: "my blog", title: title )
-		 	 b.save
+		 	 b = FactoryGirl.create(:blog, title: title, visible: false )
 		 	 blogs << b
+		end
+		#loop over the 7 blog entries
+		blogs.each do |blog|
+			# the blogs should not be displayed
+			it { should_not have_selector('footer ul.footerPosts li a', text: blog.title ) }
+		end
+  	end
+
+  	describe "Latest Blog Posts" do	
+  		blogs= Array.new()
+  		before do
+			#create blogs into the test db	 
+			7.times do |i|
+				 title = "my title #{Random.rand(10000)}"
+			 	 b = FactoryGirl.create(:blog, title: title, visible: true )
+			 	 b.save
+			 	 blogs << b
+			end
+			visit root_path
 		end
 		#loop over the 7 blog entries
 		blogs.each do |blog|
@@ -33,6 +51,7 @@ describe "Footer"  do
 				 it { should_not have_selector('footer ul.footerPosts li a', text: blog.title ) }
 				 next
 			end
+			# the blogs should not be displayed
 			it { should have_selector('footer ul.footerPosts li a', text: blog.title ) }
 			it { should have_selector('footer ul.footerPosts li span.meta', text: blog.created_at.strftime("%B %-d, %Y") ) }
 		end
