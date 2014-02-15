@@ -8,6 +8,10 @@ shared_examples_for "blog entry header" do
 		it { should have_selector('article div.entry-content p') }
 end
 
+shared_examples_for "blog show" do
+	it { should have_selector('article > header > h1') }
+end
+
 describe "Blog" do
 	
 	let(:blog) {FactoryGirl.create(:blog)}
@@ -19,6 +23,11 @@ describe "Blog" do
 	end
 
 	describe "index entry" do
+		before do 
+			9.times { FactoryGirl.create :blog } # needed to trigger pagination
+			visit blogs_path
+		end
+
 		it_should_behave_like "blog entry header"
 		it { should have_selector('article > header > h3') }
 		it { should have_selector('article div.entry-content p a.btn.btn-primary', text: 'Read More' ) }
@@ -29,7 +38,7 @@ describe "Blog" do
 	describe "show" do
 		before { visit blog_path(blog.friendly_id) }
 		it_should_behave_like "blog entry header"
-		it { should have_selector('article > header > h1') }
+		it_should_behave_like "blog show"
 	end
 
 	describe "change title" do
@@ -54,5 +63,16 @@ describe "Blog" do
 		it { should have_selector('div.entry-pagination ul.pager li') }
 		it { should have_link('Older', href: blog_path(previous.friendly_id))}
 		it { should have_link('Newer', href: blog_path(bnext.friendly_id) )}
+	end
+
+	describe "invisible blog" do
+		blog = FactoryGirl.create :blog, visible: false
+		before { visit blogs_path }
+		it { should_not have_link blog.title, href: blog_path(blog.friendly_id) }
+
+		context "go directly to blog url" do
+			before { visit blog_path(blog.friendly_id) }
+			it_should_behave_like "blog show"
+		end
 	end
 end
