@@ -13,3 +13,9 @@ Staging: git push staging master
 
 Production: git push heroku master
 
+**Connecting to the rails console**
+
++ STAGING:  heroku run rails console --remote staging
+
++ PRODUCTION: heroku run rails console --remote heroku
+
