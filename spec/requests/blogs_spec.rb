@@ -3,6 +3,9 @@ require 'spec_helper'
 shared_examples_for "blog entry header" do
 		it { should have_selector('article.entry-post') }
 		it { should have_selector('article > header.entry-header') }
+		it { should have_selector 'article header .byline i.icon-time' }
+		it { should have_selector 'article header .byline i.icon-eye-open' }
+		it { should have_selector 'article header .byline a' }
 		
 		it { should have_selector('article > header > div') }
 		it { should have_selector('article div.entry-content p') }
@@ -73,6 +76,18 @@ describe "Blog" do
 		context "go directly to blog url" do
 			before { visit blog_path(blog.friendly_id) }
 			it_should_behave_like "blog show"
+		end
+	end
+
+	describe "views count" do
+		before do 
+			@view_count = blog.views
+			visit blog_path(blog.friendly_id)
+		end
+
+		it "should increment" do
+			b = Blog.find(blog.id)
+			b.views.should == @view_count + 1
 		end
 	end
 end

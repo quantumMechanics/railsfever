@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_filter :require_signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_filter :require_admin_user, only: [:edit, :update, :destroy]
+  after_filter  :increment_view_count, only: :show
 
   # GET /blogs
   # GET /blogs.json
@@ -21,8 +22,7 @@ class BlogsController < ApplicationController
       redirect_to @blog, status: :moved_permanently
     end
 
-    cookies[:blog_id] = {value: params[:id]}
-    
+    #cookies[:blog_id] = {value: params[:id]}
     #@comment = Comment.new
     #@comments = @blog.comments.paginate(page: params[:page], per_page: 10)
     

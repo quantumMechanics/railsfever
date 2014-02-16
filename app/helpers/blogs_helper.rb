@@ -7,4 +7,9 @@ module BlogsHelper
 				disable_indented_code_blocks:true, underline:true)
 		markdown.render(text).html_safe
 	end
+
+	def increment_view_count
+		@blog.views += 1
+		@blog.save
+	end
 end
