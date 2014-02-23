@@ -79,8 +79,13 @@ class BlogsController < ApplicationController
   end
 
   def like
-    @blog = Blog.find params[:id]
+    @blog=Blog.find(params[:id])
     @blog.likes += 1
+    if @blog.save
+      head :created, location: like_blog_path(@blog)
+    else
+      head :internal_server_error, location: like_blog_path(@blog)
+    end
   end
 
 end

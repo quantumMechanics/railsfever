@@ -1,7 +1,9 @@
 Quantum::Application.routes.draw do
  
   resources :comments, only: [:index, :create, :edit, :update, :destroy]
-  resources :blogs
+  resources :blogs do
+    put 'like', on: :member
+  end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   
@@ -15,6 +17,7 @@ Quantum::Application.routes.draw do
   match 'contact' => 'contact_us#create', :as => 'contact', :via => :post
   #match 'faq', to: 'static_pages#faq'
   match 'about', to: 'static_pages#about'
+
   
   
   # The priority is based upon order of creation:
