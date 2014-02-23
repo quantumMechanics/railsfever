@@ -77,4 +77,10 @@ class BlogsController < ApplicationController
 
     redirect_to blogs_url
   end
+
+  def like
+    @blog = Blog.find params[:id]
+    @blog.likes += 1
+  end
+
 end
