@@ -90,4 +90,21 @@ describe "Blog" do
 			b.views.should == @view_count + 1
 		end
 	end
+
+	describe "likes count", js: true do
+		blog = FactoryGirl.create(:blog) #needed here for now. Fix transactional use of fixtures later
+		before do
+			visit blog_path(blog.friendly_id)
+			text = find(".entry-header .icon-heart + abbr").text
+			text.should == "0 Likes" # verify initial state	
+		end
+
+		it "should increment after click" do
+			find("#like-button").click
+			visit blog_path(blog.friendly_id)
+			text = find(".entry-header .icon-heart + abbr").text
+			text.should == "1 Like"
+		end
+	end
+
 end
