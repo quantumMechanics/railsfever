@@ -153,6 +153,13 @@ This allows the date to display left justified*/
     margin-top: 0;
 }
 
+.blog-detail #like-button {
+    display: block;
+    width: 41px;
+    height: 20px;
+    float: right;
+}
+
 /* blog summary grid/filtered masonry
 ================================================== */
 .blog-summary-grid li { padding: 0!important;background: none;}

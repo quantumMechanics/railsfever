@@ -5,5 +5,5 @@ $ ->
 			url: "#{id}/like"
 			type: "put"
 			success:() ->
-				alert("ok")
+				$("#like-button").effect('bounce', {times: 5}, 'slow')
 		})
