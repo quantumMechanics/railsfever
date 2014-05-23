@@ -15,7 +15,7 @@ Quantum::Application.routes.draw do
   match 'contact' => 'contact_us#create', :as => 'contact', :via => :post
   #match 'faq', to: 'static_pages#faq'
   match 'about', to: 'static_pages#about'
-  get "sitemap.xml" => "sitemaps#index", as: "sitemap", defaults: { format: "xml" }
+  match 'sitemap' => 'sitemaps#index', defaults: { format: "xml" }
   
   
   # The priority is based upon order of creation:
