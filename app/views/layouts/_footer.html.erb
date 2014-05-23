@@ -27,7 +27,7 @@
 					Philadelphia Pennsylvania USA<br>
 					<strong>phone:</strong> <a href="tel:267 999 9253" class="tele">267 999 9253</a><br>
 					<strong>email:</strong> <a href="mailto:email@domain.com">contact@railsfever.com</a> <br>
-					<strong>github:</strong> <a href="https://www.github.com/quantumMechanics">quantumMechanics</a>
+					<strong>github:</strong> <a href="https://www.github.com/waleo">waleo</a>
 				</p>
 			</section>
 			<!--close section-->
@@ -51,11 +51,11 @@
 				
 				<h4>Latest Blog Posts</h4>
 				<ul class="footerPosts">
-					<% Blog.limit(6).each do |b| %>
+					<% Blog.where(visible:true).limit(6).each do |b| %>
 							<li> 
 								<%= link_to( 
 									truncate(b.title, length: 40, seperator: ' '), 
-									blog_path(b.id)) 
+									blog_path(b.friendly_id)) 
 								%> 
 								<span class="meta">
 									<%= b.created_at.strftime("%B %-d, %Y") 

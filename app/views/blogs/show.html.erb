@@ -12,8 +12,10 @@
 						<div class="byline">
 							<i class="icon-time"></i> 
 							<abbr class="published" title="<%= @blog.created_at %>"> <%= @blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
+			                <i class="icon-eye-open"></i> <abbr><%=pluralize(@blog.views, 'View')%></abbr> &nbsp;&nbsp;
+			                <i class="icon-heart"></i> <abbr><%=pluralize(@blog.likes, 'Like')%></abbr> &nbsp;&nbsp;
 			                <%= link_to "#disqus_thread" do %>
-			                  <i class="icon-comments-alt"></i>
+			                  <!--i class="icon-comments-alt"></i-->
 			                <% end %>
 						</div>
 						
@@ -31,10 +33,7 @@
 					<!--end entry-header-->
 					
 					<div class="entry-content">		
-						
 						<%= markdown @blog.content %>	
-
-						
 					</div>
 					<!--end entry-content-->
 					<footer class="entry-footer"> 	
@@ -55,12 +54,18 @@
 					</footer>
 					<!--end entry-footer--> 
 
-					<% if admin? %>
-						<p class="more right">
+						
+					<p class="more right">
+						<a id='like-button' class='btn btn-primary' data-blog="<%=@blog.id%>" >
+							<i class='icon-heart'></i>
+							Like
+						</a>
+						<% if admin? %>
 							<%= link_to 'Edit', edit_blog_path(@blog), 
 								class: 'btn btn-primary' %>
-						</p>
-					<% end %>
+						<% end %>
+					</p>
+						
 					
 				</article>
 				<!--end entry-post -->

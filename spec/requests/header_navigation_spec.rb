@@ -22,11 +22,10 @@ describe "Header" do
 
 		describe "Blog list elements" do			
 			#create blogs into the test db
-			blogs= Array.new() 
+			blogs= []
 			6.times do |i|
 				 title = "my title #{Random.rand(10000)}"
-			 	 b = Blog.new(content: "my blog", title: title )
-			 	 b.save
+			 	 b = FactoryGirl.create(:blog, title: title)
 			 	 blogs << b
 			end
 			#loop over the 6 blog entries
@@ -38,29 +37,37 @@ describe "Header" do
 				end
 				it { should have_selector('header ul.accordmobile li#blog ul li a', text: blog.title ) }
 			end
+		end
 
-			
-		  end
+		describe "Invisible blogs should not show" do			
+			#create blogs into the test db
+			blogs= [] 
+			1.times do |i|
+				 title = "my title #{Random.rand(10000)}"
+			 	 b = FactoryGirl.create(:blog, title: title, visible: false )
+			 	 blogs << b
+			end
+			#loop over the blog entries
+			blogs.each do |blog|
+				it { should_not have_selector('header ul.accordmobile li#blog ul li a', text: blog.title ) }
+			end
+		end
 
-		  pending "faq" do
-		  	it { should have_link('FAQ', href: faq_path) }
+		pending "faq" do
+			it { should have_link('FAQ', href: faq_path) }
 
-		  	it "click faq" do
-		  		click_link('FAQ')
-		  		page.should have_selector('h2', text: 'Frequently Asked Questions')
-		  	end
-		  end
+			it "click faq" do
+				click_link('FAQ')
+				page.should have_selector('h2', text: 'Frequently Asked Questions')
+			end
+		end	
 
-		  
-		  	
+		it { should have_link 'About', href: about_path }
 
-		  	it { should have_link 'About', href: about_path }
-
-		  	it "click about" do
-		  		click_link('About')
-		  		page.should have_selector('h2', text: 'About Me')
-		  	end
-		
+		it "click about" do
+			click_link('About')
+			page.should have_selector('h2', text: 'About Me')
+		end
 	end
 
 	describe "click link to contact us" do

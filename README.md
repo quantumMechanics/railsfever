@@ -1,9 +1,28 @@
 # RAILS FEVER
 
-See the development version of the site at http://netcool.herokuapp.com
+This repo contains the source for www.railsfever.com
 
-The backend is complete, but a UI redesign work is in progres. Please pardon our appearance. Some links may not work.
 
-We keep the development environment up most of the time, but it may be down a few minutes for maintenance. If you experience this please wait a bit and try again.
+**Deployment Steps**
 
+*With Deploy script:*
+Pick one depending on if migrations are needed.
+
++ bundle exec rake deploy:staging_migrations  OR deploy_staging
+
++ bundle exec rake deploy:production_migrations OR deploy_production
+
+NOTE: If there are db changes, first do:
+
+heroku run rake db:migrate
+
+Staging: git push staging master
+
+Production: git push heroku master
+
+**Connecting to the rails console**
+
++ STAGING:  heroku run rails console --remote staging
+
++ PRODUCTION: heroku run rails console --remote heroku
 

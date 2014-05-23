@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Blog do
   
   before do
-  	@blog = Blog.new(content: "my blog", title: "nice post")
+  	@blog = Blog.new(content: "my blog", title: "nice post", visible: true)
   end
 
   subject { @blog }
@@ -13,6 +13,9 @@ describe Blog do
   	it { should respond_to :previous_post }
   	it { should respond_to :next_post }
   	it { should respond_to :slug }
+  	it { should respond_to :visible? }
+  	it { should respond_to :views }
+  	it { should respond_to :likes }
   	it { should be_valid }
 
   
@@ -70,4 +73,5 @@ describe Blog do
 		before { @blog.valid? } #do something to trigger a db search on the blog, which will cause the slug to be generated
 		it { @blog.slug.should_not be_nil }
 	end
+
 end
