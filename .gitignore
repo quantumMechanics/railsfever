@@ -21,3 +21,4 @@ doc/
 .project
 .DS_Store
 .idea
+db/test.sqlite3-journal
