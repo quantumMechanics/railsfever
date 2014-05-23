@@ -3,7 +3,7 @@ class SitemapsController < ApplicationController
 
 	def index
 		@static_paths = [contact_path, about_path, blogs_path]
-		@blogs = Blog.all
+		@blogs = Blog.where(visible:true)
 		#then render the view template
 	end
 end
