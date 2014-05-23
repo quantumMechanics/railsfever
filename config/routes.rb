@@ -17,6 +17,7 @@ Quantum::Application.routes.draw do
   match 'contact' => 'contact_us#create', :as => 'contact', :via => :post
   #match 'faq', to: 'static_pages#faq'
   match 'about', to: 'static_pages#about'
+  match 'sitemap' => 'sitemaps#index', defaults: { format: "xml" }
 
   
   

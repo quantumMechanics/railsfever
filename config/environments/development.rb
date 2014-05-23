@@ -9,8 +9,10 @@ Quantum::Application.configure do
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 
-  # Show full error reports and disable caching
+  # Show full error reports 
   config.consider_all_requests_local       = true
+
+  # Perform caching to test sitemap.xml
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
