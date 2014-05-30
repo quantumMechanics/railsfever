@@ -2,15 +2,11 @@ require 'spec_helper'
 
 describe "Header" do
 
-	let (:title) { "Rails Fever | Building Web Sites and Apps using Ruby on Rails" }
-	
-
 	subject { page }
 
 	before { visit root_path }
 
 	describe "Home" do
-		it { should have_selector('title', text: title) }
 		it { should have_selector('header') }
 		it { should have_link 'Home', href: root_path}
 
