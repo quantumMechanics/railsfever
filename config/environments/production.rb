@@ -11,6 +11,12 @@ Quantum::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  # enable javascript compression
+  config.assets.js_compressor = :uglifier
+
+  # enable css compression
+  config.assets.css_compressor = :yui
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
@@ -62,7 +68,7 @@ Quantum::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # tell app server to server our pre-compiled assets  
+  # tell app server to serve our pre-compiled assets
   config.serve_static_assets = true
 
   #include plain cs and js files
