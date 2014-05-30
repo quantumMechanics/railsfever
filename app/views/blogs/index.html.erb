@@ -1,3 +1,5 @@
+<%provide :title, "Blog"%>
+
 <div class="container">
   <%= will_paginate @blogs, class: 'pagination pagination-right no-margin pagination-mini', 
       previous_label: '<', next_label: '>', renderer: 'FeverRenderer' %>
