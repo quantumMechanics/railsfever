@@ -3,4 +3,10 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
+
+User-Agent: *
 sitemap: http://www.railsfever.com/sitemap.xml
+
+# for admin only
+Disallow: /signin 
+Disallow: /signup 
