@@ -21,13 +21,12 @@
 			<!--close section--> 
 
 			<section>
-				<h4>Contact Us</h4>
-				<p>We will be happy to meet with you to discuss more!</p>
+				<h4>Contact Me</h4>
+				<p>Hire me today to start your project!</p>
 				<p>Rails Fever LLC<br>
 					Philadelphia Pennsylvania USA<br>
 					<strong>phone:</strong> <a href="tel:267 999 9253" class="tele">267 999 WALE</a><br>
 					<strong>email:</strong> <a href="mailto:contact@railsfever.com">contact@railsfever.com</a> <br>
-					<strong>github:</strong> <a href="https://www.github.com/waleo">waleo</a>
 				</p>
 			</section>
 			<!--close section-->
@@ -46,15 +45,15 @@
 		
 		
 		<!--section containing blog posts-->
-		<div class="span4">
+		<div class="span6">
 			<section>
 				
-				<h4>Latest Blog Posts</h4>
+				<h4>Read my recent Blog posts</h4>
 				<ul class="footerPosts">
 					<% Blog.where(visible:true).limit(6).each do |b| %>
 							<li> 
 								<%= link_to( 
-									truncate(b.title, length: 40, seperator: ' '), 
+									truncate(b.title, length: 60, seperator: ' '), 
 									blog_path(b.friendly_id)) 
 								%> 
 								<span class="meta">
@@ -69,7 +68,7 @@
 		<!-- close .span4 --> 
 
 		<!--section containing newsletter signup and recent images-->
-		<div class="span4">
+		<!--div class="span4">
 			<section>
 				<h4>Recent News</h4>
 				<p>
@@ -109,7 +108,7 @@
 				</p>
 			</section>
 			<!--close section-->
-		</div>
+		<!--/div-->
 		<!-- close .span4 --> 
 	</div>
 	<!-- close .row-fluid--> 
