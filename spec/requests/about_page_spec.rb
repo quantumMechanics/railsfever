@@ -32,7 +32,7 @@ describe "About" do
 	end
 	describe 'click css3 logo', js:true do
 		before { click_link('css3-logo') }
-		it { current_url.should == "http://en.wikipedia.org/wiki/Css" }
+		it { current_url.should == "http://en.wikipedia.org/wiki/Cascading_Style_Sheets" }
 	end
 	describe 'click ruby logo' do
 		before { click_link('ruby-logo') }
