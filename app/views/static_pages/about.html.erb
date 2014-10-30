@@ -1,4 +1,4 @@
-<%provide :title, "Wale Olaleye Experienced Ruby Developer"%>
+<%provide :title, "Wale Olaleye Experienced Ruby Developer Consultant"%>
 
 <div class="hero-unit">
 	<div class="container">
@@ -11,11 +11,11 @@
 <div class="container clearfix" id="main-content"> 
 	
 	<!--begin main content-->
-	<p class="big">Hire me now to build your next web application!</p>
+	<p class="big">A Business Savy Web Developer</p>
 	<div class="row-fluid">
 		<div class="span3"> <%= image_tag src='wale.png', class:'aligncenter', alt: 'Wale Olaleye' %>
 			<h5>Wale Olaleye</h5>
-			<h6><em>Principal Developer</em></h6>	
+			<h6><em>Ruby Developer</em></h6>	
 			<span class="visuallyhidden" > Akinwale Olaleye </span>
 		</div>
 		<!--close span4-->
@@ -27,6 +27,7 @@
 			<p>
 				Having many years of industry experience, I have developed an understanding of software development life cycle, <strong>agile development</strong> and team leadership. I apply these skills to help my clients who usually have not been exposed to such software development techniques. I am effective at communicating, listening to problems, and collaborating to deliver the right solution on time.
 			</p>
+			<%= render 'layouts/shared/hire_me_button' %>
 		</div>
 		
 	</div>
@@ -35,52 +36,36 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<h3 class="short_headline margin-top"><span>my favorite tools</span></h3>
+
+			<div class='span3'>
+				<ul class='style-none'>
+					<li> <h4> Heroku </h4> </li>
+					<li> <h4> Amazon Web Services </h4> </li>
+					<li> <h4> Jquery </h4> </li>
+					<li> <h4> Rspec </h4> </li>
+					<li> <h4> Rails </h4> </li>	
+				</ul>
+			</div>
+
+			<div class='span3'>
+				<ul class='style-none'>
+					<li> <h4> Rails </h4> </li>
+					<li> <h4> Capybara </h4> </li>
+					<li> <h4> Selenium </h4> </li>
+					<li> <h4> Factory Girl </h4> </li>
+					<li> <h4> D3.js Charts </h4> </li>
+				</ul>
+			</div>
 			
-			<ul class="thumbnails">
-				<li class="offset1">
-					<a id="ror-logo" href="http://www.rubyonrails.org">
-						<%= image_tag 'rails_logo.png', size: '91x118', alt: 'Ruby on Rails' %>
-					</a>
-				</li>
-				<li class="offset1">
-					<a id="html5-logo" href="http://www.wikipedia.org/wiki/HTML5">
-						<%= image_tag 'html5_logo.png', size: '128x128' %>
-					</a>
-				</li>
-				<li class="offset1">
-					<a id="css3-logo" href="http://www.en.wikipedia.org/wiki/Css">
-						<%= image_tag 'css3_logo.png', size: '128x128' %>
-					</a>
-				</li>
-				<li class="offset1">
-					<a id="ruby-logo" href="http://www.ruby-lang.org">
-						<%= image_tag 'ruby_logo.png', size: '95x117' %>
-					</a>
-				</li>
-			</ul>
-
-			<ul class="thumbnails">
-				<li class="offset4">
-					<a id="github-logo" href="http://www.github.com">
-						<%= image_tag 'github_logo.png', size: '250x103' %>
-					</a>
-				</li>
-			</ul>
-
-			<ul class="thumbnails">
-				<li>
-					<a id="jquery-logo" href="http://www.jquery.com">
-						<%= image_tag 'jquery_logo.png', size: '200x49' %>
-					</a>
-				</li>	
-			</ul>
-
-			<ul class="thumbnails">
-				<li class="offset5">
-					<a id="heroku-logo" href="http://www.heroku.com">
-						<%= image_tag 'heroku_logo.png', size: '300x110' %></li>
-					</a>
-			</ul>
+			<div class='span3'>
+				<ul class='style-none'>
+				  <li> <h4> Node.js </h4> </li>
+					<li> <h4> Ruby Debug </h4> </li>
+					<li> <h4> Google Analytics </h4> </li>
+					<li> <h4> Twitter Bootstrap </h4> </li>
+					<li> <h4> Nginx & Passenger </h4> </li>
+				</ul>
+			</div>
 
 			 <!--ruby , ror,  html5, css3, jquery, rspec, capybara, heroku, java, selenium -->
 		</div>	

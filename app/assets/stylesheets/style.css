@@ -242,6 +242,7 @@ code { color: #ea4800 }
 
 ul.square li {list-style-type:square}
 ul.circle li {list-style-type:disc}
+ul.style-none li {list-style-type: none}
 
 /* blockquotes / quotes / dropcap
 ================================================== */
