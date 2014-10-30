@@ -6,17 +6,17 @@ describe 'Page Titles' do
 
 	context "Home" do
 		before { visit root_path }
-		it { should have_selector 'title', text: "#{base_title} | Philadelphia Ruby on Rails Developer Consultant" }
+		it { should have_selector 'title', text: "#{base_title} | Philadelphia Freelance Ruby on Rails Developer Consultant" }
   	end
 
   	context "About" do
   		before { visit about_path }
-  		it { should have_selector 'title', text: "#{base_title} | About" }
+  		it { should have_selector 'title', text: "#{base_title} | Wale Olaleye Experienced Ruby Developer Consultant" }
   	end
 
   	context "Contact" do
   		before { visit contact_path }
-  		it { should have_selector 'title', text: "#{base_title} | Freelance Ruby on Rails Developer for hire | Philadelphia Ruby on Rails Development" }
+  		it { should have_selector 'title', text: "#{base_title} | Send a message" }
   	end
 
   	context "Blog Index" do

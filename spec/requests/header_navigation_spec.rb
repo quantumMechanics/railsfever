@@ -68,7 +68,7 @@ describe "Header" do
 
 	describe "click link to contact us" do
 		before { click_link "Contact" }
-		it { should have_selector('h1', text: 'Rails Developer') }
+		it { should have_selector('h1', text: "Let's get the conversation started") }
 	end
 
 end
