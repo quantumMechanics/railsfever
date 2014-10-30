@@ -21,7 +21,7 @@ describe 'Page Titles' do
 
   	context "Blog Index" do
   		before { visit blogs_path }
-  		it { should have_selector 'title', text: "#{base_title} | Blog" }
+  		it { should have_selector 'title', text: "#{base_title} | Rails Fever Blog" }
   	end
 
   	context "Blog View" do
