@@ -6,6 +6,7 @@ Quantum::Application.routes.draw do
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resource :new_leads, only: [:create]
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

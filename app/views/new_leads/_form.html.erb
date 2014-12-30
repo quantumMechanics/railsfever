@@ -1,0 +1,17 @@
+<%= form_for @new_lead, remote: true, :url => new_leads_path do |form| %>
+  <%= render 'shared/error_messages', object: form.object %>
+  <div id=flash-message> </div>
+  <fieldset>
+    <div class="control-group">
+      <%= form.label :name, 'Name' %>
+      <%= form.text_field :name, class: "span10" %>
+    </div>
+
+    <div class="control-group">
+      <%= form.label :email, 'Email' %>
+      <%= form.email_field :email, class: "span10" %>
+    </div>
+
+    <%= form.button "Send", class: "btn btn-primary btn-large" %>
+  </fieldset>
+<% end %>
