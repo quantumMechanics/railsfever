@@ -23,10 +23,10 @@
 					<header class="entry-header">
 						<h1><%= @blog.title %></h1>
 						<div class="byline">
-							<i class="icon-time"></i> 
+							<i class="fa fa-bell-o"></i> 
 							<abbr class="published" title="<%= @blog.created_at %>"> <%= @blog.created_at.strftime("%B %-d, %Y") %></abbr> &nbsp;&nbsp; 
-			                <i class="icon-eye-open"></i> <abbr><%=pluralize(@blog.views, 'View')%></abbr> &nbsp;&nbsp;
-			                <i class="icon-heart"></i> <abbr><%=pluralize(@blog.likes, 'Like')%></abbr> &nbsp;&nbsp;
+			                <i class="fa fa-eye"></i> <abbr><%=pluralize(@blog.views, 'View')%></abbr> &nbsp;&nbsp;
+			                <i class="fa fa-heart"></i> <abbr><%=pluralize(@blog.likes, 'Like')%></abbr> &nbsp;&nbsp;
 			                <%= link_to "#disqus_thread" do %>
 			                  <!--i class="icon-comments-alt"></i-->
 			                <% end %>
