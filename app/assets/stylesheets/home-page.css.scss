@@ -17,6 +17,17 @@
 	font-size: 120%;
 }
 
+.no-bullet {
+	list-style-type: none;
+}
+
+.list {
+	li{
+		padding: .5%;
+		font-size: 125%
+	}
+}
+
 
 @media only screen and (min-width: 980px) {
 	.banner p { font-size: 120%; }
